@@ -13,6 +13,21 @@
   <%= form.collection_select :user_id, User.all, :id, :email %>
   <%= form.submit 'Add Member' %>
   
+<h2>Tasks</h2>
+<ul>
+  <% @group.tasks.each do |task| %>
+    <li><%= task.exercise.title %></li>
+  <% end %>
+</ul>
+
+<h2>Add Tasks</h2>
+  <%= form_with(model: @task, url: group_tasks_path(@group)) do |form| %>
+    <%= form.label :exercise_id, 'Select Exercise' %>
+    <%= form.collection_select :exercise_id, Exercise.all, :id, :title, prompt: 'Select an exercise' %>
+  
+    <%= form.submit 'Add Task to Group' %>
+  <% end %>
+  
   
 
 <% end %>
