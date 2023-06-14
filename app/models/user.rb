@@ -19,4 +19,9 @@ class User < ApplicationRecord
         def last_name=(value)
           write_attribute(:last_name, value)
         end
+
+        has_many  :groups
+        has_many  :members
+        has_many  :exercises
+        has_many  :submissions
 end
