@@ -1,0 +1,234 @@
+{
+  "title": "Programming Languages",
+  "desc": "Programming Languages",
+  "build_dir": "Books",
+  "code_dir": "SourceCode/",
+  "lang": "en",
+  "build_JSAV": false,
+  "suppress_todo": false,
+  "dispModComp": true,
+  "glob_exer_options": {
+    "JXOP-debug": "true"
+  },
+  "glob_ss_options": {
+    "threshold": 1.0, 
+    "points": 0.0, 
+    "required": false
+  }, 
+  "glob_ff_options": {
+    "threshold": 1.0, 
+    "points": 0.0, 
+    "required": false
+  },
+  "glob_ka_options": {
+    "threshold": 3, 
+    "points": 1.0, 
+    "required": true
+  }, 
+  "glob_extr_options": {
+    "code-workout": {
+      "points": 2.0
+    }, 
+    "points": 1.0
+  }, 
+  "glob_pe_options": {
+    "threshold": 1, 
+    "points": 2.0, 
+    "required": true
+  }, 
+  "chapters": {
+    "Preface": {
+      "Intro": {}
+    },
+    "Grammars": {
+      "PL/Grammars1": {
+        "CharacterizeLang1": {
+          "threshold": 1
+        },
+        "CharacterizeLang2": {
+          "threshold": 1
+        },
+        "NumParseTreeNodes": {
+          "threshold": 1
+        },
+        "StringGenFromGmr": {
+          "threshold": 1
+        }
+      },
+      "PL/Grammars2": {
+        "NumParseTrees1": {
+          "threshold": 1
+        },
+        "NumParseTrees2": {
+          "threshold": 1
+        },
+        "NumParseTrees3": {
+          "threshold": 1
+        },
+        "DeterminingAmbiguities": {
+          "threshold": 1
+        }
+      },
+      "PL/Grammars3": {
+        "Associativity": {
+          "threshold": 1
+        },
+        "CharacterizeLang3": {
+          "threshold": 1
+        },
+        "ExtendedBNF": {
+          "threshold": 1
+        },
+        "PrecedenceAndAssociativity": {
+          "threshold": 1
+        }
+      },
+      "PL/Grammars4": {
+        "Jison2": {
+          "threshold": 1
+        }
+      },
+      "PL/Grammars5": {
+        "AnnotatingJison": {
+          "threshold": 1
+        }
+      }
+    },
+    "Functional Programming": {
+      "PL/FP1": {
+        "FPcons": {
+          "threshold": 1
+        },
+        "FPHdTlCons2": {
+          "threshold": 1
+        },
+        "FPisEq": {
+          "threshold": 1
+        }
+      },
+      "PL/FP2": {
+        "RecListProc2": {
+          "threshold": 1
+        },
+        "RecListProc3": {
+          "threshold": 1
+        }
+      },
+      "PL/FP3": {
+        "DeepRecur2": {
+          "threshold": 1
+        },
+        "DeepRecur3": {
+          "threshold": 1
+        },
+        "DeepRecur1": {
+          "threshold": 1
+        }
+      },
+      "PL/FP4": {
+        "SplitAndJoin": {
+          "threshold": 1
+        },
+        "QuickSort": {
+          "threshold": 1
+        }
+      },
+      "PL/FP5": {
+        "HigherOrderFuncs2": {
+          "threshold": 1
+        },
+        "HigherOrderFuncs3": {
+          "threshold": 1
+        },
+        "StaticDynamic": {
+          "threshold": 1
+        }
+      },
+      "PL/FP6": {
+        "Curry1": {
+          "threshold": 1
+        },
+        "Compose": {
+          "threshold": 1
+        },
+        "Map": {
+          "threshold": 1
+        }
+      },
+      "PL/FP7": {
+        "Reduce1": {
+          "threshold": 1
+        },
+        "Reduce2": {
+          "threshold": 1
+        },
+        "Filter": {
+          "threshold": 1
+        }
+      },
+      "PL/FP8": {},
+      "PL/FP9": {
+        "ContinuationPassing1": {
+          "threshold": 1
+        },
+        "ContinuationPassing2": {
+          "threshold": 1
+        },
+        "ContinuationPassing3": {
+          "threshold": 1
+        },
+        "TailRecursion": {
+          "threshold": 1
+        }
+      }
+    },
+    "Lambda Calculus": {
+      "PL/Syntax": {},
+      "PL/Semantics": {
+        "LambdaCalcSemantics": {
+          "threshold": 1
+        }
+      },
+      "PL/FreeBoundVariables": {},
+      "PL/AlphaConversion": {},
+      "PL/Substitution": {},
+      "PL/BetaReduction": {},
+      "PL/ReductionStrategies": {},
+      "PL/ChurchNumerals": {
+        "ChurchIfThen": {
+          "threshold": 1
+        },
+        "ChurchOR": {
+          "threshold": 1
+        }
+      },
+      "PL/RecursiveFunctions": {}
+    },
+    "Interpreting the Functional Language SLang 1": {
+      "PL/SLang1": {},
+      "PL/Environment": {},
+      "PL/SLang1withLetExpressions": {}
+    },
+    "Interpreting the Imperative Language SLang 2": {
+      "PL/SLang2": {},
+      "PL/SLang2TTK": {}
+    },
+    "Variations on Parameter Passing": {
+      "PL/SLang2ParameterPassing": {},
+      "PL/LazyLists": {}
+    },
+    "Data Typing: The Good and The Bad": {
+      "PL/TypeConsiderations": {}
+    },
+    "Interpreting the Object Oriented Language SLang 3": {
+      "PL/SLang3reviewOfOOP": {},
+      "PL/SLang3concreteSyntax": {},
+      "PL/SLang3abstractSyntax": {},
+      "PL/SLang3objects": {},
+      "PL/SLang3interpreter": {}
+    },
+    "Appendices": {
+      "PL/PL_Glossary": {}
+    }
+  }
+}

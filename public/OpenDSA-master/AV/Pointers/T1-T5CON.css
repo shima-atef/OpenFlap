@@ -1,0 +1,12 @@
+#T1-T5CON {
+  height: 350px;
+}
+
+#T1-T5CON .jsavcode {
+  margin-top: 0px;
+  margin-left: 200px;
+}
+
+#T1-T5CON .jsavoutput.jsavline {
+  height: 30px;
+}

@@ -1,0 +1,21 @@
+<%= render "navbar" %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Created by</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exercises.each do |exercise| %>
+      <tr>
+        <td><%= link_to exercise.title , exercise%></td>
+        <td><%= exercise.exercise_type %></td>
+        <td><%= exercise.user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

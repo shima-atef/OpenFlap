@@ -1,0 +1,184 @@
+/*
+  Iteration Slides CSS file
+
+  author: Jieun Chon
+  version: Nov 20, 2017
+*/
+
+/* ---------- JSAV CSS ----------*/
+.jsavhorizontalarray .jsavnode {
+  min-width: 40px !important;
+  min-height: 40px !important;
+  background: #74a55b;
+}
+
+.jsavvaluelabel {
+  font-weight: 600;
+}
+
+
+/* ---------- Labels CSS ----------*/
+.loopLabels {
+  position: relative;
+  display: block;
+  color: white;
+  font-size: 170%;
+  z-index: 500;
+  font-weight: 600;
+}
+
+.consolelabels  {
+  position: relative;
+  display: block;
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  color: black;
+  font-size: 130%;
+  z-index: 500;
+  font-weight: 600;
+}
+
+.consolelabelsbgwhite  {
+  position: relative;
+  display: block;
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  color: black;
+  font-size: 130%;
+  z-index: 600;
+  font-weight: 600;
+  background-color: white;
+}
+
+.valLabels {
+  position: relative;
+  display: block;
+  color: white;
+  font-size: 130%;
+  z-index: 500;
+  font-weight: 600;
+}
+
+.valBlackLabels {
+  position: relative;
+  display: block;
+  color: black;
+  font-size: 130%;
+  z-index: 500;
+  font-weight: 600;
+}
+
+.smalllabel {
+  font-size: 130%;
+}
+
+.midlabel {
+  font-size: 150%;
+}
+
+.statelabel  {
+ font-size: 120%;
+ font-weight: 600;
+}
+
+.statelabellarge  {
+ font-size: 130%;
+ font-weight: 600;
+}
+
+/* value label with purple background */
+.valuelabelpb  {
+ font-size: 130%;
+ color: yellow;
+ background-color: #593f73;
+ }
+
+ .valuelabel {
+   font-size: 150%;
+   color: yellow;
+   stroke-width: 0;
+ }
+
+
+/* ----------Box CSS----------*/
+.purplebox  {
+  fill : #a55ba5;
+  stroke : #a55ba5;
+  z-index: -500;
+}
+
+.greenbox {
+  fill: #74a55b;
+  stroke: #74a55b;
+  z-index : -500;
+}
+
+.greenboxlight {
+  fill: #C7DBBD;
+  stroke: #C7DBBD;
+  z-index : -600;
+}
+
+.purpleboxlight {
+  fill: #ccbddb;
+  stroke: #ccbddb;
+  z-index : -600;
+}
+
+.bluebox  {
+  fill : rgb(91, 91, 165);
+  stroke : rgb(91, 91, 165);
+  z-index: -500;
+}
+
+.blueboxlight {
+  fill: #BDBDDB;
+  stroke: #BDBDDB;
+  z-index : -600;
+}
+
+.blueboxh  {
+  fill : #e6eeff;
+  stroke : #e6eeff;
+}
+
+.emptybox {
+    z-index: -600;
+    stroke-width : 0;
+}
+
+.statebox  {
+  stroke : Maroon;
+  z-index: -500;
+  border-width: inherit;
+  border-radius: 50px;
+}
+
+.consolebox  {
+  fill: white;
+  stroke: lightgray;
+  z-index: -500;
+  border-width: inherit;
+  border-radius: 50px;
+}
+
+.calbox  {
+  fill : #805ba5;
+  stroke : #d8d1e0;
+  z-index: -500;
+}
+
+.calboxhigh  {
+  fill : #f2eff6;
+  stroke : #f2eff6;
+  z-index: -500;
+}
+
+
+/* ----------Others----------*/
+.hiding {
+  visibility: hidden;
+}
+
+.consoleline  {
+  stroke: lightgray;
+  stroke-dasharray: 5, 5;
+}

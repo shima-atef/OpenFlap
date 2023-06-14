@@ -1,0 +1,12 @@
+#simpleLifetimeCON {
+  height: 280px;
+}
+
+#simpleLifetimeCON .jsavcode {
+  margin-top: 0px;
+  margin-left: 50px;
+}
+
+#simpleLifetimeCON .jsavoutput.jsavline {
+  height: 30px;
+}

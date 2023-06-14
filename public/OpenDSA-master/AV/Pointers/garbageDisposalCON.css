@@ -1,0 +1,17 @@
+#garbageDisposalCON {
+  height: 430px;
+}
+
+#garbageDisposalCON .jsavoutput.jsavline {
+  height: 30px;
+}
+
+#garbageDisposalCON .jsavcode {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.silver {
+  stroke: #ddf;
+  color: #ddf;
+}

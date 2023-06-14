@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Grammar Exercise: anb2n</title>
+    <link rel="stylesheet" href="\OpenDSA-master\lib\JSAV.css" type="text/css">
+    <link rel="stylesheet" href="\OpenDSA-master/lib/odsaAV.css" type="text/css">
+    <link rel="stylesheet" href="\OpenDSA-master/lib/odsaStyle.css" type="text/css">
+    <link rel="stylesheet" href="\OpenDSA-master\AV\OpenFLAP\css\grammar.css" type="text/css">
+    <link rel="stylesheet" href="\OpenDSA-master\AV\OpenFLAP/css/help.css" type="text/css">
+    <link rel="stylesheet" href="\OpenDSA-master\AV\OpenFLAP/css/grammarEditor.css" type="text/css">
+   <script src="\OpenDSA-master/lib/jquery.min.js"></script>
+   <script>
+     $(document).ready(function() {
+       getExerciseLocation = function () {
+         return "/exercises_file/<%=@file_name%>"
+       };
+      
+     });
+    </script>
+  </head>
+
+  <body>
+    <div >
+        <div id="container">
+      <img id="check_mark" src="\OpenDSA-master\AV\OpenFLAP\green_check.png" alt="Proficient" style="display: none;float: left; width: 40px;">
+      <h1 id="grammarexercise">Grammar Exercise</h1>
+      <button id="helpbutton"><img src="\OpenDSA-master\AV\OpenFLAP/help.png" /></button>
+      <h2 id="description"></h2>
+      <div id="dialogueoverlay"></div>
+      <div id="dialoguebox">
+        <div>
+          <div id="dialogueboxhead"></div>
+          <div id="dialogueboxbody"></div>
+          <div id="dialogueboxfoot"></div>
+        </div>
+      </div>
+      <p align="center" class="arrayPlace"></p>
+      <button type="button" id="editbutton">Edit Grammar</button>
+      <button type="button" id="addrowbutton">Add Row</button>
+      <button type="button" id="deletebutton">Delete Row</button>
+      <button type="button" class="function" id="identifybutton">Identify Grammar</button>
+      <div id="buttons" align="center">
+        <span id='mode'></span><br>
+        <div id="av">
+          <a class="jsavsettings" href="#">Settings</a>
+          <p align="center" class="jsavexercisecontrols"></p>
+          <p class="jsavscore"></p>
+          <p class="jsavoutput jsavline"></p>
+        </div>
+        <div id="graph" class="jsavcanvas"></div>
+      </div>
+      <p id="percentage"></p>
+      <table id="testResults"></table>
+    </div>
+    <script src="\OpenDSA-master\AV\OpenFLAP\exercises\exerController\TestCaseGenerater.js"></script>
+    <script src="\OpenDSA-master\AV\OpenFLAP\exercises/exerController/grammarHandler.js"></script>
+    <script src="\OpenDSA-master/lib/jquery.migrate.min.js"></script>
+    <script src="\OpenDSA-master/lib/jquery.ui.min.js"></script>
+    <script src="\OpenDSA-master/lib/jquery.transit.js"></script>
+    <script src="\OpenDSA-master/lib/raphael.js"></script>
+    <script src="\OpenDSA-master/lib/dagre.min.js"></script>
+    <script src="\OpenDSA-master/lib/JSAV.js"></script>
+    <script src="\OpenDSA-master/lib/odsaUtils.js"></script>
+    <script src="\OpenDSA-master/lib/odsaAV.js"></script>
+    <script src="\OpenDSA-master/DataStructures/FLA/serializableGraph.js"></script>
+    <script src="\OpenDSA-master/lib/underscore.js"></script>
+    <script src="\OpenDSA-master/DataStructures/FLA/FA.js"></script>
+    <script src="\OpenDSA-master/DataStructures/FLA/PDA.js"></script>
+    <script src="\OpenDSA-master/DataStructures/FLA/Grading.js"></script>
+    <script src="\OpenDSA-master\AV\OpenFLAP\grammarEditor.js"></script>
+    <script src="\OpenDSA-master\AV\OpenFLAP\exercises/exerController/GrammarExerciseController.js"></script>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+#buffintroCON {
+  height: 485px;
+}
+
+#LRUCON {
+  height: 485px;
+}
+
+#LRUwriteCON {
+  height: 510px;
+}
+
+#LRUwriteCON .jsavline {
+  height: 100px;
+}
+
+.jsavverticalarray .jsavnode.buffer {
+  max-width: 100px !important;
+  min-width: 100px !important;
+}
+
+.jsavhorizontalarray .jsavnode.buffer {
+  max-width: 100px !important;
+  min-width: 100px !important;
+}

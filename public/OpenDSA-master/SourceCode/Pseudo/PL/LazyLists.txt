@@ -1,0 +1,154 @@
+/* *** ODSATag: LazyList1 *** */
+// Construct a new sequence comprised of the given integer and thunk
+var cons = function (n,thunk) { ... }          // code in the is module
+// Example of constructing a sequence using the is module, in this 
+// example, the sequence consisting of all 1s
+var ones = is.cons(1,
+		   function () { return ones; } );
+// Get the first integer in the  sequence
+var hd = function (seq) { ... }                // code in the is module
+// Example of using the is.hs operation
+is.hd(ones);
+// Get the the infinite sequence following the first element.  This
+// will itself be in the form of an integer followed by a thunk
+var tl = function (seq) { ... }                // code in the is module
+// Example of using the is.tl operation
+var more_ones = is.tl(ones);
+// Return the (finite, non-lazy) list containing the first n
+// integers in the given sequence
+var take = function (seq,n) { ... }            // code in the is module
+// Example of using the is.take operation
+is.take(ones,5);
+/* *** ODSAendTag: LazyList1 *** */
+
+/* *** ODSATag: LazyList2 *** */
+// return the sequence of successive integers starting at n
+var from = function (n) {
+    return cons(n, function () { ?????? });
+    return cons(n, function () { return n + 1; });
+    return cons(n, function () { return from(n + 1); });
+};
+
+// Example of using from
+var intsFrom1 = is.from(1);
+var h = is.hd(intsFrom1);
+var s1 = is.tl(intsFrom1);
+var s2 = is.tl(is.tl(intsFrom1));
+var s3 = is.take(s2, 6);
+/* *** ODSAendTag: LazyList2 *** */
+
+/* *** ODSATag: LazyList3 *** */
+// Analogue to what the map operation did for finite lists in the fp
+// module, that is, return a new sequence obtained by applying the
+// given function f to each member of the given sequence seq
+var map = function (f,seq) {
+    return cons(<??? 1st arg to cons ???>,
+    return cons(f(hd(seq)), 
+	        <??? 2nd arg to cons ???> );
+		function () {
+		    return map(f, tl(seq));
+		}
+	       );
+};
+
+// Examples of using map
+var intsFrom1 = is.from(1);
+var s1 = is.take(is.map( function (n) { return 2 * n; },
+			 intsFrom1),
+		 5);
+var s2 = is.take(is.map( function (n) { return n * n; },
+			 intsFrom1),
+		 5);
+/* *** ODSAendTag: LazyList3 *** */
+
+/* *** ODSATag: LazyList4 *** */
+// Filters the given sequence with the given predicate
+var filter = function (pred,seq) {
+    if (pred(hd(seq))) {
+        return cons( ?????? );
+	return cons(hd(seq),
+		    function () {
+		         return filter(pred, tl(seq));
+		    });
+    } else {
+        return ??????;
+	return filter(pred, tl(seq));
+    }
+};
+
+var intsFrom1 = is.from(1);
+var evens = is.take(
+    is.filter(
+	function (n) { return n % 2 == 0; },
+	intsFrom1
+    ),
+    10);
+/* *** ODSAendTag: LazyList4 *** */
+
+/* *** ODSATag: LazyList5 *** */
+// Return a sequence formed by removing the first n items
+// from seq
+var drop = function (seq, n) {
+    if (n === 0)
+	return ????;
+        return seq;
+    else {
+	return ????;
+	return drop(tl(seq), n - 1);
+    }
+};
+
+var intsFrom1 = is.from(1);
+var evens12 = is.drop(
+    is.filter(
+	function (n) { return n % 2 == 0; },
+	intsFrom1
+    ),
+    5);
+var first6 = is.take(evens12,6);
+/* *** ODSAendTag: LazyList5 *** */
+
+/* *** ODSATag: LazyList6 *** */
+// Return a new sequence obtained by repeatedly applying the given
+// function to the previous term of the sequence (starting with the
+// given integer n).  That is, return the sequence n, f(n), f(f(n)),
+// f(f(f(n))), ...
+var iterates = function (f, n) {
+    return cons(
+        ??????
+	n,
+        ??????
+	function () { return iterates(f, f(n)); }
+    );
+};
+
+is.take(is.iterates(function (x) { return 2 * x; }, 1), 6);
+is.take(is.iterates(function (x) { return ?????? ; }, ??????), 6);
+is.take(is.iterates(function (x) { return 3 + x; }, 3), 6);
+/* *** ODSAendTag: LazyList6 *** */
+
+/* *** ODSATag: LazyList7 *** */
+Create a boolean array indexed from 0 to n
+Set indices 0 and 1 to false.  All others to true
+Initially, let p equal 2, the smallest prime number
+"Sift" multiples of p, starting at 2*p, by setting them to false
+Find the first index > p and <= square-root(n) that is true
+    If there is no such index, stop
+    Otherwise, let p = this index and repeat from step 4
+Upon termination, the indexes that remain true are all the primes <= n
+/* *** ODSAendTag: LazyList7 *** */
+
+/* *** ODSATag: LazyList8 *** */
+var sieve = function (seq) {
+    var sift =  function (p) { return p % is.hd(seq) !== 0; };
+    return is.cons(is.hd(seq),
+		   function () {
+		       return ??????;
+		       return is.filter( sift, is.tl(seq));
+		       return is.filter( sift, sieve(is.tl(seq)));
+		   });
+};
+
+var primes = sieve(is.from(2));
+is.take(primes, 10);
+/* *** ODSAendTag: LazyList8 *** */

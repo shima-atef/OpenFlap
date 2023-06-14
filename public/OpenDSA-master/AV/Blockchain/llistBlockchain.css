@@ -1,0 +1,19 @@
+#llistBlockchain {
+  height: 460px;
+}
+
+#llistBlockchain .jsavoutput.jsavline {
+  height: 100px;
+}
+
+#llistBlockchain .jsavlistnode {
+  max-width: 400px !important;
+  max-height: 400px !important;
+  font-size: 10px !important;
+  line-height: 10px !important;
+}
+
+#llistBlockchain .jsavlist {
+  left: 0px !important;
+  max-lines: 10;
+}

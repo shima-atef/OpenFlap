@@ -1,0 +1,11 @@
+#ProductCON {
+  height: 450px;
+}
+
+
+.jsavmatrix .jsavnode {
+  width: 45px !important;
+  min-width: 45px !important;
+  height: 45px !important;
+  min-height: 45px !important;
+}

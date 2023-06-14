@@ -1,0 +1,21 @@
+{
+  "translations": {
+    "en": {}
+  },
+  "code": {
+    "java": {
+      "url": "../../../SourceCode/Java/General/ParPtrTree2.java",
+      "lineNumbers": false,
+      "startAfter": "/* *** ODSATag: UnionFind *** */",
+      "endBefore": "/* *** ODSAendTag: UnionFind *** */",
+      "tags": {
+        "finda": 2,
+        "findb": 3,
+        "setroot1": 6,
+        "weight1": 7,
+        "setroot2": 9,
+        "weight2": 10
+      }
+    }
+  }
+}

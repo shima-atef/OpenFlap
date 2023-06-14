@@ -1,0 +1,63 @@
+#outer {
+    width: 100%;
+}
+
+#container {
+    width: 269px;
+    height: 225px;
+    position: relative;
+    display: table;
+}
+
+.instructions {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.bsize {
+    position: absolute;
+    left: 10px;
+    top: 42px;
+}
+
+#blockNum {
+    position: absolute;
+    left: 175px;
+    top: 55px;
+    width: 50px;
+}
+
+.tsize {
+    position: absolute;
+    left: 10px;
+    top: 70px;
+}
+
+#tablesize {
+    position: absolute;
+    left: 10px;
+    top: 110px;
+    right: 10px;
+    height: 50px;
+    width: 250px;
+    resize: none;
+}
+
+.outputLabel {
+    position: absolute;
+    top: 160px;
+    left: 10px;
+    display: inline-block;
+} 
+
+.output {
+    position: absolute;
+    left: 60px;
+    top: 174px;
+    text-align:center;
+    font-size: 10pt;
+    font-family: Courier;
+    display: inline-block;
+}

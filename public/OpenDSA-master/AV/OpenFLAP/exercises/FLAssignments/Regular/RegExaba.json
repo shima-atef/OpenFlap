@@ -1,0 +1,1 @@
+[{"_exerciseType": "Comment: DFA, NFA, REGEXP, GRAMMAR, PDA, TM","exerciseType": "REGEXP","containLetters": ["a", "b"],"randomStringLength": [0, 15],"description": "Give a regular expression whose language is strings over $\\{a, b\\}$ that contain aba."}]

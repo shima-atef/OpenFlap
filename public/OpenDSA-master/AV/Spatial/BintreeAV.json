@@ -1,0 +1,11 @@
+{
+  "translations" : {
+    "en": {
+      ".avTitle": "Bintree Visualization",
+      "av_Authors": "Souleymane Dia, Anthony Rinaldi, and Cliff Shaffer",
+      "#about": "About",
+      "#run": "Run",
+      "#reset": "Reset"
+    }
+  }
+}

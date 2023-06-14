@@ -1,0 +1,14 @@
+<header>
+  <nav>
+    <ul style="display: inline-block;">
+      <li style="display: inline-block;"><%= link_to "All Exercises", exercises_path %></li>
+      <li style="display: inline-block;"><%= link_to "CLF Exercises", exercises_path(type: "CFL") %></li>
+      <li style="display: inline-block;"><%= link_to "FA Exercises", exercises_path(type: "FA") %></li>
+      <li style="display: inline-block;"><%= link_to "grammar Exercises", exercises_path(type: "grammar") %></li>
+      <li style="display: inline-block;"><%= link_to "PDA Exercises", exercises_path(type: "PDA") %></li>
+      <li style="display: inline-block;"><%= link_to "Regular Exercises", exercises_path(type: "Regular") %></li>
+      <li style="display: inline-block;"><%= link_to "TM Exercises", exercises_path(type: "TM") %></li>
+    </ul>
+  </nav>
+
+</header>

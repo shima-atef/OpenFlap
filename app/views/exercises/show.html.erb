@@ -1,0 +1,15 @@
+ <%=@file_name%>
+ 
+<% if @exercise_type == "CFL" %>
+  <%= render 'CFLexercise' %>
+<% elsif @exercise_type == "FA"%>
+  <%= render 'FAExercise' %>
+  <% elsif @exercise_type == "grammar"%>
+  <%= render 'grammarExercise' %>
+   <% elsif @exercise_type == "PDA"%>
+  <%= render 'PDAExercise' %>
+  <% elsif @exercise_type == "Regular"%>
+  <%= render 'RegularExercise' %>
+    <% elsif @exercise_type == "TM"%>
+  <%= render 'TMExercise' %>
+<% end %>

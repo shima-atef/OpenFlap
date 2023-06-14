@@ -1,0 +1,115 @@
+{
+  "title": "CS3 Fall 2018 Coursenotes",
+  "desc": "CS3 Fall 2018 Coursenotes",
+  "build_dir": "Books",
+  "code_dir": "SourceCode/",
+  "lang": "en",
+  "code_lang": {
+    "Java": {
+      "ext": [
+        "java"
+      ],
+      "label": "Java",
+      "lang": "java"
+    },
+    "Java_Generic": {
+      "ext": [
+        "java"
+      ],
+      "label": "Java (Generic)",
+      "lang": "java"
+    },
+    "C++": {
+      "ext": [
+        "cpp",
+        "h"
+      ],
+      "label": "C++",
+      "lang": "C++"
+    }
+  },
+  "tabbed_codeinc": false,
+  "build_JSAV": false,
+  "suppress_todo": false,
+  "glob_exer_options": {},
+  "glob_ss_options": {
+    "threshold": 1.0,
+    "points": 0.0,
+    "required": false
+  },
+  "glob_ff_options": {
+    "threshold": 1.0, 
+    "points": 0.0, 
+    "required": false
+  },
+  "glob_ka_options": {
+    "threshold": 5,
+    "points": 1.0,
+    "required": true
+  },
+  "glob_extr_options": {
+    "code-workout": {
+      "points": 2.0
+    },
+    "points": 1.0
+  },
+  "glob_pe_options": {
+    "threshold": 0.9,
+    "points": 2.0,
+    "required": true
+  },
+  "chapters": {
+    "Week 1, Day 1": {
+      "CS3slides/CS3114Intro": {},
+      "CS3slides/Intro": {}
+    },
+    "Week 1, Day 2": {
+      "CS3slides/ProjManage": {},
+      "CS3slides/P1": {},
+      "CS3slides/MemManage": {}
+    },
+    "Week 2": {
+      "CS3slides/AlgAnal": {},
+      "CS3slides/QuickHash": {},
+      "CS3slides/Math": {}
+    },
+    "Week 3, Day 1": {
+      "CS3slides/JUnit": {},
+      "CS3slides/Lists": {}
+    },
+    "Week 3, Day 2": {
+      "CS3slides/Overconstrained": {},
+      "CS3slides/Coding": {},
+      "CS3slides/StackQueue": {}
+    },
+    "Week 4": {
+      "CS3slides/Binary": {},
+      "CS3slides/Binary2": {}
+    },
+    "Week 5": {
+      "CS3slides/Binary3": {},
+      "CS3slides/Heaps": {}
+    },
+    "Weeks 6-8": {
+      "CS3slides/Sorting1": {},
+      "CS3slides/Sorting2": {}
+    },
+    "Week 9": {
+      "CS3slides/FileProc": {}
+    },
+    "Week 10": {
+      "CS3slides/Hashing": {}
+    },
+    "Week 11": {
+      "CS3slides/Huffman": {},
+      "CS3slides/SkipList": {}
+    },
+    "Week 12-13": {
+      "CS3slides/Indexing": {}
+    },
+    "Week 14-15": {
+      "CS3slides/Graphs": {}
+    },
+    "Appendix": {}
+  }
+}

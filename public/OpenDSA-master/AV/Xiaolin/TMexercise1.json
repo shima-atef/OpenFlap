@@ -1,0 +1,20 @@
+[
+    {
+        "description": "Create a machine that increases the number of a's in the string",
+        "testCases": [
+            {
+                "a": "aa"
+            },
+            {
+                "": "a"
+            },
+            {
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+        ],
+        "graph": {
+            "nodes": [],
+            "edges": []
+        }
+    }
+]

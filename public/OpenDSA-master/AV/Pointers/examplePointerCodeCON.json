@@ -1,0 +1,32 @@
+{
+  "translations": {
+    "en": {
+    }
+  },
+  "code":
+  {
+    "java": [{
+      "url": "../../../SourceCode/Java/Pointers/Employee.java",
+      "lineNumbers": false,
+      "startAfter": "/* *** ODSATag: examplePointerCode *** */",
+      "endBefore": "/* *** ODSAendTag: examplePointerCode *** */",
+      "tags": {
+        "empPtr1": 3,
+        "empPtr2": 4,
+        "newEmployee1": 5,
+        "newEmployee2": 6,
+        "employee1": 7,
+        "equal": 8,
+        "sam":9
+      }
+    },
+    {
+      "url": "../../../SourceCode/Java/Pointers/Employee.java",
+      "lineNumbers": false,
+      "startAfter": "/* *** ODSATag: badPointerCode *** */",
+      "endBefore": "/* *** ODSAendTag: badPointerCode *** */",
+      "tags": {
+        }
+    }]
+  }
+}

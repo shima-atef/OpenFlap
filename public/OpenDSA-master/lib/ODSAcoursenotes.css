@@ -1,0 +1,45 @@
+.jsavcontainer{
+  letter-spacing: 0px;
+  text-shadow: none;
+}
+.divdgm .jsavlabel{
+  font-size: 13px;
+  font-family: san-serif;
+}
+.highlight, .highlight-guess{
+  font-size: 15px;
+}
+/*.jsavcode.jsavcenter{
+  width: 500px;
+}*/
+ul li::before {
+    content: none;
+    width: 0px;
+    margin-left: 0px;
+}
+.jsavcanvas{
+  /*min-height: 600px;*/
+  overflow-x: visible;
+}
+.hide{
+  display: none;
+}
+.jsavvaluelabel{
+  font-size: 15px;
+}
+
+/*.jsavlabel{
+  line-height: 1em;
+}*/
+.jsavarray{
+  font-size: 15px;
+}
+.jsavlist{
+  font-size: 15px; 
+}
+.MathJax, .MathJax_Display  {
+  font-size: 40% ;
+}
+.ui-widget{
+  font-size: 15px;
+}

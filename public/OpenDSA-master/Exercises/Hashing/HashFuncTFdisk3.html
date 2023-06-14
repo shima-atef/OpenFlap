@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html data-require="math">
+  <head>
+    <title>Hash System Type for Disk: Bucket Hashing</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+    <script src="../../khan-exercises/local-only/main.js" ></script>
+  </head>
+
+  <body>
+    <div class="exercise">
+      <div class="problems">
+        <div id="HashFuncTFdisk3p">
+          <p class="problem">Answer TRUE or FALSE.</p>
+          <p class="question">Bucket hashing works well for disk-based hash systems.</p>
+          <div class="solution">True</div>
+          <ul class="choices" data-category="true">
+            <li>True</li>
+            <li>False</li>
+          </ul>
+          <div class="hints">
+            <p>The bucket size can be set to the size of a disk block.</p>
+            <p>So only one block needs to be read into memory to do
+              an insert... unless the bucket is full.</p>
+            <p>If the bucket is full, then overflow bucket must be
+            retrieved as well. Naturally, overflow should be kept
+            small to minimize unnecessary disk accesses.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

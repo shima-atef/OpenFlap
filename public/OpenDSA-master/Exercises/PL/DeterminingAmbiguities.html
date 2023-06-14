@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html data-require="math" lang="en">
+  <head>
+    <meta charset=utf-8>
+    <title>Discovering Ambiguities</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+    <script src="../../khan-exercises/local-only/main.js" ></script>
+    <link rel="stylesheet"  href="./styles.css" type="text/css" />
+  </head>
+
+  <body data-height="920" data-width="950">
+    <div class="exercise">
+      <div class="problems">
+        <div id="DeterminingAmbiguitiesp">
+          <p class="question">Consider the following grammars:
+	    <table class="grammar">
+	      <tr><td><strong>Grammar 1:</strong></td>
+		<td>&lt;s&gt; ::= a &lt;s&gt; |  b &lt;s&gt; | &epsilon;
+		</td></tr>
+	      <tr><td><strong>Grammar 2:</strong></td>
+		<td>&lt;s&gt; ::= a | b |  &lt;s&gt; &lt;s&gt; | &epsilon;
+	      </td></tr>
+	      <tr><td><strong>Grammar 3:</strong></td>
+		<td>&lt;s&gt; ::= a &lt;s&gt; b | &epsilon;</td></tr>
+	      <tr><td><strong>Grammar 4:</strong></td>
+		<td>&lt;s&gt; ::= &lt;s&gt; a | &lt;s&gt; b | a</td></tr>
+	      <tr><td><strong>Grammar 5:</strong></td>
+		<td>&lt;s&gt; ::= a &lt;r&gt; | &lt;r&gt;</td></tr>
+	      <tr><td></td>
+		<td>&lt;r&gt; ::= b &lt;s&gt; | &lt;s&gt; | &epsilon;</td></tr>
+	    </table>
+            <p class="question">How many of these grammars are ambiguous?</p>
+          <div class="solution">2</div>
+          <ol class="choices" data-category="true">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>	    
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+
+          </ol>
+          <div class="hints">
+            <p>Review the definition of an ambiguous grammar.</p>
+	    <p>For each grammar, when looking for strings with
+	    multiple parse trees, start with the shortest strings that
+	    the grammar generates.</p>
+	    <p>Common sources of grammatical ambiguity include
+	    recursive patterns such as double recursion and single,
+	    indirect recursion (i.e., from one non-terminal back to itself
+	      via one or more other non-terminals).</p>
+	    <p>Grammar 1 is not ambiguous because every string in its
+	    language is either empty or starts with an <code>a</code>
+	    or a <code>b</code>. This grammar handles each case once
+	    and generates each string in only one way, namely from
+	    left to right.</p>
+	    <p>Grammar 2 is ambiguous because of the double recursion
+	    in its third production. For example, the strings
+	    &epsilon; and <code>a</code> have more than one parse
+	    tree.</p>
+	    <p>Grammar 3 is not ambiguous because the only production
+	    that can produce a non-empty string is the first one.</p>
+	    <p>Grammar 4 is not ambiguous because every string in its
+	    language is either empty or ends with an <code>a</code> or
+	    a <code>b</code>. This grammar handles each case once and
+	    generates each string in only one way, namely from right
+	    to left.</p>
+	    <p>Grammar 5 is ambiguous because, for example, &lt;s&gt;
+	    can generate &lt;r&gt;, which in turn can re-generate
+	    &lt;s&gt;, leading to infinitely many, arbitrarily deep
+	    parse trees for all strings, including &epsilon;.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

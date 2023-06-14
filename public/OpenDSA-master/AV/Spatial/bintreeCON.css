@@ -1,0 +1,13 @@
+#bintreeCON .jsavcanvas {
+ margin-left: auto;
+ margin-right: auto;
+ height: 550px;
+}
+
+svg {
+  stroke-width: 2;
+}
+
+.emptyLeaf {
+  border-radius: 1px;
+}
