@@ -2254,7 +2254,7 @@ jQuery.cssHooks.borderWidth = {
     });
     return $elem;
   };
-
+  
   JSAV.init(function (options) {
     var output = options.output ? $(options.output) : $(this.container).find(".jsavoutput");
     this._msg = new MessageHandler(this, output);

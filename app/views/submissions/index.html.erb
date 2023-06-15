@@ -1,0 +1,24 @@
+
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Link</th>
+      <th>User</th>
+      <th>Grade</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @submission_links.each do |submission_link| %>
+      <tr>
+        <td><%= submission_link[:id] %></td>
+        <td><%= link_to 'Show Solution', submission_link[:url] %></td>
+        <td><%= submission_link[:user_email] %></td>
+        <td><%= submission_link[:grade] %></td>
+        <td><%= submission_link[:created_at] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

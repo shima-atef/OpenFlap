@@ -7,6 +7,8 @@
       <th>Name</th>
       <th>Type</th>
       <th>Created by</th>
+      <th>Created at</th>
+      <th>Submissions</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +17,8 @@
         <td><%= link_to exercise.title , exercise%></td>
         <td><%= exercise.exercise_type %></td>
         <td><%= exercise.user.email %></td>
+        <td><%= exercise.created_at %></td>
+        <td><%= link_to Submission.where(exercise_id: exercise.id).count, exercise_submissions_path(exercise) %></td>
       </tr>
     <% end %>
   </tbody>
