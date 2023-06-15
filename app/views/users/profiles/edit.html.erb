@@ -1,0 +1,18 @@
+<!-- app/views/users/profiles/edit.html.erb -->
+
+<h1>Edit Profile</h1>
+
+<%= form_for(current_user, url: users_profile_path, method: :put) do |f| %>
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  
+  <div>
+    <%= f.submit 'Update Profile' %>
+  </div>
+<% end %>

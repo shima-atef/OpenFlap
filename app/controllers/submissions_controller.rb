@@ -1,7 +1,13 @@
 require 'nokogiri'
 require 'json'
 class SubmissionsController < ApplicationController
+  
+
+  def user_submissions
+    @user = User.find(params[:id])
+    @submissions = Submission.where(user_id: @user.id)
     
+  end
 
     def index
       @exercise = Exercise.find(params[:exercise_id])

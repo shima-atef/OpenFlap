@@ -1,4 +1,11 @@
 class ExercisesController < ApplicationController
+
+  def user_exercises
+    @user = User.find(params[:id])
+    @exercises = Exercise.where(user_id: @user.id)
+    
+  end 
+
     def index
       if params[:type].present?
         @exercises = Exercise.includes(:user).where(exercise_type: params[:type])
