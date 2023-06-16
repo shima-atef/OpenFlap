@@ -136,6 +136,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.0-x64-mingw32)
       racc (~> 1.4)
+    nokogiri (1.15.0-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -192,6 +194,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3-x64-mingw-ucrt)
     sqlite3 (1.6.3-x64-mingw32)
+    sqlite3 (1.6.3-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.2)
@@ -226,6 +229,7 @@ GEM
 PLATFORMS
   x64-mingw-ucrt
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -246,7 +250,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.0.4p208
 
 BUNDLED WITH
-   2.4.12
+   2.4.14
