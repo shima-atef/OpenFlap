@@ -48,7 +48,14 @@ Rails.application.routes.draw do
       end
     end
     
-   
+    Rails.application.routes.draw do
+      resources :groups do
+        resource :dashboard, only: [:show], controller: 'dashboard'
+      end
+      
+    end
+    
+    
     
     
 end

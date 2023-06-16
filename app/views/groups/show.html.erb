@@ -12,4 +12,7 @@
 <%= form_with url: group_members_path(@group) do |form| %>
   <%= form.collection_select :user_id, User.all, :id, :email %>
   <%= form.submit 'Add Member' %>
+  
+  
+
 <% end %>
