@@ -1,0 +1,15 @@
+<h1><%= @group.title %></h1>
+<p><%= @group.description %></p>
+
+<h2>Members</h2>
+<ul>
+  <% @members.each do |member| %>
+    <li><%= member.user.first_name.to_s + " " + member.user.last_name.to_s %></li>
+  <% end %>
+</ul>
+
+<h2>Add Member</h2>
+<%= form_with url: group_members_path(@group) do |form| %>
+  <%= form.collection_select :user_id, User.all, :id, :email %>
+  <%= form.submit 'Add Member' %>
+<% end %>

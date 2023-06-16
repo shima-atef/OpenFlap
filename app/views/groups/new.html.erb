@@ -1,0 +1,13 @@
+<h1>New Group</h1>
+
+<%= form_with model: @group, url: groups_path do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <%= form.submit 'Create Group' %>
+<% end %>

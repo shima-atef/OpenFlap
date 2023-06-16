@@ -36,6 +36,18 @@ Rails.application.routes.draw do
 
     get "lib/odsaUtils-min.js" => proc { [200, {}, [File.read(Rails.root.join("public", "lib", "odsaUtils.js"))]] }
     get "lib/odsaAV-min.js" => proc { [200, {}, [File.read(Rails.root.join("public", "lib", "odsaAV.js"))]] }
+
+
+    resources :groups do
+      resources :members, only: [:create, :destroy]
+    end
+
+    Rails.application.routes.draw do
+      resources :groups do
+        resources :members, only: [:create, :destroy]
+      end
+    end
+    
    
     
     
