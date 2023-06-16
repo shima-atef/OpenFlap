@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  openflap:
+    build: .
+    container_name: openflap_c
+    ports:
+      - '3000:3000'
