@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_15_223723) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_17_190611) do
+  create_table "Tasks", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "exercise_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "exercises", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
@@ -40,13 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_223723) do
     t.integer "exercise_id"
     t.float "grade"
     t.text "solution"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tasks", force: :cascade do |t|
-    t.integer "groub_id"
-    t.integer "exercise_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
