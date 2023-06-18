@@ -32,8 +32,48 @@
     return true;
   }
 
+
+
+
   //it will store a grade of -1 if it is from reset
   var store_solution = function (solution, grade) {
+    function setExerciseId() {
+      var exerciseIdMatch = window.location.pathname.match(/^\/exercises\/(\d+)/);
+      if (exerciseIdMatch) {
+        var exerciseId = parseInt(exerciseIdMatch[1]);
+        console.log(exerciseId);
+        let my_data = {
+          progress: solution,
+          grade: grade * 100,
+          exerciseId: exerciseId
+
+        };
+    
+        $.ajax({
+          type: "POST",
+          url: "/exercises/" + exerciseId + "/submissions",
+          data: JSON.stringify(my_data),
+          dataType: "json",
+          contentType: "application/json; charset=utf-8",
+          headers: {
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+          },
+          success: function (result, status, xhr) {
+            // Redirect to user_submissions_path
+            window.location.href = '/user_submissions';
+          },
+          error: function (xhr, status, error) {
+            // Show error message to user
+            $('#error-message').show();
+          }
+        });
+      }
+    }
+    
+    setExerciseId(); // call setExerciseId() to submit the submission
+    
+    // Call the setExerciseId function to set the exercise ID on page load
+
     var exerciseFrame = window.frameElement;
     //sanity check to adapt stand alone page
     if (exerciseFrame == null)

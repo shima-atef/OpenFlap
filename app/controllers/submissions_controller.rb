@@ -1,10 +1,11 @@
 require 'nokogiri'
 require 'json'
 class SubmissionsController < ApplicationController
+  before_action :authenticate_user!
   
 
   def user_submissions
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
     @submissions = Submission.where(user_id: @user.id)
     
   end
@@ -34,34 +35,28 @@ class SubmissionsController < ApplicationController
  
   def create
     data = JSON.parse(request.body.read)
-    render json: { message: data }
-    progress =jff_to_json( data["progress"])
+    progress = jff_to_json(data["progress"])
     grade = data["grade"]
-   # @exercise = Exercise.find(params[:exercise_id])
-    @submission =Submission.new(user_id: current_user.id, exercise_id: data['exerciseId'], grade: grade, solution: progress )
+    @submission = Submission.new(user_id: current_user.id, exercise_id: data['exerciseId'], grade: grade, solution: progress)
+     @exercise = Exercise.find(params[:exercise_id])
     if @submission.save
-    file_name = "#{data['exerciseId']}.json"
-    file_path = Rails.root.join('public', 'exercises_file', file_name)
-    file_content = File.read(file_path)
-    file_content = file_content[1..-2]
-    submission_data = JSON.parse(file_content)
-    submission_data['graph']= JSON.parse(progress)
-    file_content = submission_data.to_json
-    @submission_file_name = "#{@submission.id}.json"
+      file_name = "#{data['exerciseId']}.json"
+      file_path = Rails.root.join('public', 'exercises_file', file_name)
+      file_content = File.read(file_path)
+      file_content = file_content[1..-2]
+      submission_data = JSON.parse(file_content)
+      submission_data['graph'] = JSON.parse(progress)
+      file_content = submission_data.to_json
+      @submission_file_name = "#{@submission.id}.json"
+      file_content = "[#{file_content}]"
+      File.open(Rails.root.join('public', 'submissions', @submission_file_name), 'wb') do |file|
+        file.write(file_content)
+      end
+      render json: { redirect_url: user_submissions_path(id: current_user.id) }
+    else
+      render json: { error_message: @submission.errors.full_messages.join('; ') }, status: :unprocessable_entity
     
-   # render json: { message:  @submission_file_name }
-    file_content = "[#{file_content}]"
-     File.open(Rails.root.join('public', 'submissions', @submission_file_name), 'wb') do |file|
-     file.write(file_content)
-     end
-    end 
-
-    #redirect_to submissions_path, notice: 'Submission was successfully created.'
-     
-    #render json: { message: @submission.id }
-    #render json: { message: current_user.id }
-    #render json: { message: data }
-    #render json: { message: grade }
+    end
   end
 
 

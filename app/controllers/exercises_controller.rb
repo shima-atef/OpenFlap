@@ -1,4 +1,5 @@
 class ExercisesController < ApplicationController
+   before_action :authenticate_user!
 
   def user_exercises
     @user = User.find(params[:id])
@@ -30,48 +31,55 @@ class ExercisesController < ApplicationController
         # POST /exercises
         def create
          
-          data = JSON.parse(request.body.read)
-          #render json: { message: data }
-          
-          @exercise= Exercise.new(user_id:current_user.id,title: data["name"],exercise_type: data["type"] );
-          problem = data["problems"][0]
-         
-          if  data["type"]=="CFL"
-            problem["type"]="GRAMMAR"
-          elsif  data["type"]=="FA"
-            problem["type"]="DFA"
-          elsif  data["type"]=="grammar"
-            problem["type"]="GRAMMAR"
-          elsif  data["type"]=="PDA"
-            problem["type"]="PDA"
-          elsif  data["type"]=="Regular"
-            problem["type"]="REGEXP"
-          elsif  data["type"]=="TM"
-            problem["type"]="TM"
+          if current_user.nil?
+            flash[:alert] = 'You must be logged in to create an exercise.'
+            render :new
+            return
           end
-          json_file=[problem]
-          json_file=JSON.generate(json_file)
-          #render json: { message: @submission.id }
-          
+        
+          data = JSON.parse(request.body.read)
+          description = data['problems'][0]['description']
+        
+          if description.length > 10 
+            description = description.slice(0, 10) + "..." 
+          end 
+        
+          @exercise = Exercise.new(user_id: current_user.id, title: description, exercise_type: data["type"])
+          problem = data["problems"][0]
+        
+          if data["type"] == "CFL"
+            problem["type"] = "GRAMMAR"
+          elsif data["type"] == "FA"
+            problem["type"] = "DFA"
+          elsif data["type"] == "grammar"
+            problem["type"] = "GRAMMAR"
+          elsif data["type"] == "PDA"
+            problem["type"] = "PDA"
+          elsif data["type"] == "Regular"
+            problem["type"] = "REGEXP"
+          elsif data["type"] == "TM"
+            problem["type"] = "TM"
+          end
+        
+          if problem['testCases'].nil? || problem['testCases'].empty?
+            flash[:alert] = 'Test cases field must not be empty.'
+            render :new
+            return
+          end
+        
+          json_file = [problem]
+          json_file = JSON.generate(json_file)
+        
           if @exercise.save
             file_name = "#{@exercise.id}.json"
             File.open(Rails.root.join('public', 'exercises_file', file_name), 'wb') do |file|
               file.write(json_file)
             end
-            redirect_to @exercise, notice: 'Exercise was successfully created.'
+        
+            render json: { url: exercise_path(@exercise) }, status: :created
           else
-            render :new
+            render json: { error: @exercise.errors.full_messages.join('; ') }, status: :unprocessable_entity
           end
-        
-  
-         
-  
-        
-  
-  
-  
-         
-  
         end
         
   

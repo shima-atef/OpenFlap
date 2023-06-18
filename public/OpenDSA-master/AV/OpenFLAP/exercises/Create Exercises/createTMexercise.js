@@ -14,8 +14,7 @@
 	function generatejson()
 	{
 		var exerciseNameElement = document.getElementById('exerciseName');
-         exerciseName = exerciseNameElement.value;
-		 console.log(exerciseName);
+        
 		problems = [];
 		$("fieldset").each(problemInfo);
 		var json = JSON.stringify(problems);
@@ -29,26 +28,28 @@
 
 		let my_data = {
 			type: exercise_type,
-			name: exerciseName,
+			
 			problems: problems
 
 		  };
 
-        $.ajax({
+		  $.ajax({
 			url: '/exercises',
 			type: 'POST',
 			dataType: 'json',
-			data:JSON.stringify(my_data),
+			data: JSON.stringify(my_data),
 			beforeSend: function(xhr) {
 			  xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
 			},
 			success: function(response) {
-			  // Handle the response from the server
-			  console.log(response);
+			  // Redirect to the newly created exercise page
+			  window.location.href = response.url;
 			},
 			error: function(xhr, status, error) {
 			  // Handle errors
-			  console.log(xhr.responseText);
+			  var errorMessage = xhr.responseJSON.error;
+			  errorMessage = errorMessage.replace("Title", "Description"); // replace "Title" with "Description" in the error message
+			  $('#error-message').text(errorMessage); // assuming there's a <div id="error-message"></div> in your 'new' view
 			}
 		  });
 
@@ -492,7 +493,7 @@
 
 
 	$("#getjson").click(generatejson);
-	$("#addExercise").click(addProblem);
+	$("#addExercise").click(addProblem).hide();
 	$("#addTestCase").click(addCase);
 	$("#editGraph").click(editGraph);
 

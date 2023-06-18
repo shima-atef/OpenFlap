@@ -14,18 +14,22 @@
   <%= form.submit 'Add Member' %>
 <% end %>
 
-<h2>Tasks</h2>
-<ul>
-  <% @group.tasks.each do |task| %>
-    <li><%= task.exercise.title %></li>
-  <% end %>
-</ul>
+<h2>Exercises</h2>
+<% if @group.exercises.any? %>
+  <ul>
+    <% @group.exercises.each do |exercise| %>
+      <li><%= exercise.title %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No exercises found.</p>
+<% end %>
 
-<h2>Add Tasks</h2>
-  <%= form_with(model: @task, url: group_tasks_path(@group)) do |form| %>
-    <%= form.label :exercise_id, 'Select Exercise' %>
-    <%= form.collection_select :exercise_id, Exercise.all, :id, :title, prompt: 'Select an exercise' %>
+<h2>Add Exercises</h2>
+<%= form_with(model: @group, url: group_exercises_path(@group)) do |form| %>
+  <%= form.collection_select :exercise_id, Exercise.all, :id, :title, prompt: "Select an exercise" %>
+  <%= form.submit "Add Exercise" %>
+<% end %>
 
-    <%= form.submit 'Add Task to Group' %>
-  <% end %>
+
 

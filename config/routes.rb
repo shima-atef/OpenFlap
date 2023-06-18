@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   # to get all user submissions 
     get 'users/:id/submissions', to: 'submissions#user_submissions', as: 'user_submissions'
     get 'submissions/:id', to: 'submissions#show', as: 'submission'
+
+   
   # to get all exercises that create by user
     get 'users/:id/exercises', to: 'exercises#user_exercises', as: 'user_exercises'
    # get 'exercises/:id', to: 'exercises#show', as: 'exercises'
@@ -52,13 +54,22 @@ Rails.application.routes.draw do
       resources :groups do
         resource :dashboard, only: [:show], controller: 'dashboard'
       end
-      
-    end
+       end
+       resources :groups do
+        resources :tasks
+      end
+  
     
-    resources :groups do
-      resources :tasks
-    end
-    
-    
+  get 'editor', to: 'editor#index'
+  get 'editor/fa', to: 'editor#fa' 
+  get 'editor/pda', to: 'editor#pda'
+  get 'editor/reTOfa', to: 'editor#reTOfa'
+  get 'editor/tm', to: 'editor#tm'
+  get 'editor/grammar', to: 'editor#grammar'
+  get 'editor/fAFixer', to: 'editor#fAFixer'
+
+  get '/FA.html', to: redirect('/editor/fa')
+  get '/FAFixer.html', to: redirect('/editor/fAFixer')
+ get  '/user_submissions', to: 'submissions#user_submissions'
     
 end

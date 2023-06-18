@@ -14,8 +14,7 @@
 	function generatejson()
 	{
 		var exerciseNameElement = document.getElementById('exerciseName');
-         exerciseName = exerciseNameElement.value;
-		 console.log(exerciseName);
+        
 		problems = [];
 		$("fieldset").each(problemInfo);
 		var json = JSON.stringify(problems);
@@ -29,7 +28,7 @@
 
 		let my_data = {
 			type: exercise_type,
-			name: exerciseName,
+			
 			problems: problems
 
 		  };
