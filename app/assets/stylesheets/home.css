@@ -1,0 +1,84 @@
+body{
+    background-color:#fff;
+     overflow-x: hidden;
+}
+.bg-image {
+    background-image: url(team.jpg); 
+    background-size: 100% 100%;
+    background-position: center center;
+    height: 500px; /* set a default height for the background image */
+    position: relative;
+  }
+  
+  .bg-image h2 {
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    color: #fff;
+    color: whitesmoke;
+    font-family: 'Ubuntu';
+    font-size: 40px;
+    z-index: 1;
+  }
+  .bg-image h2 span{
+    color:  #07253f;
+    font-weight: bold;
+  }
+  @media (min-width: 768px) {
+    .bg-image {
+      height: 100vh; /* set the height to the full viewport height on larger screens */
+    }
+  }
+
+.card{
+ 
+    height:400px;
+   background: whitesmoke;
+    margin-top: 40px;
+    /* border-radius: 20px; */
+    transition: 0.5s ease;
+    background-color: #051c2f;
+    color: white;
+
+}
+.card:hover{
+    box-shadow: #4774eb 0px 1px 15px 0px;
+    transform: scale(1.1);
+}
+.card img{
+    width: 120px;
+    height: 120px;
+    border-radius: 25%;
+    margin-left: 120px;
+}
+.card-title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.text-muted{
+    font-weight: bold;
+    color: lightgray;
+}
+.icons{
+  padding-top: 30px;
+  font-size: 70px;
+  word-spacing: 35px;
+}
+
+
+.footer-title
+{
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    color: #0b375e;
+}
+hr {
+    margin: auto;
+    width: 100%;
+    color: #0b375e;
+  }
+.footer-disc
+{
+    padding-bottom: 20px;
+    color: #0b375e;
+}

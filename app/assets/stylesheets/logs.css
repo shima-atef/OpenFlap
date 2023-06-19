@@ -1,0 +1,23 @@
+.log{
+    
+    background-image: radial-gradient(circle, #051c21, #294147, #506b71, #7a979e, #a6c6cd);
+}
+
+form {
+background-color:#051c2f;
+border-radius: 20px;
+padding: 50px;
+color: #fff;
+margin: 0 auto;
+margin-top: 60px;
+}
+.form-group .button{
+    background-color: #b8cee2;
+    color: #0b375e;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+}
+.form-group .button:hover{
+    box-shadow: rgba(86, 86, 94, 0.5) 0px 4px 8px 0px;
+}

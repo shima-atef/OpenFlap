@@ -1,0 +1,63 @@
+.navbar{
+    background-color:white;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 12px 0px;
+    padding-top: 10px;
+}    
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-brand{
+      color:#0b375e ;
+      font-family: 'Righteous';
+      font-size: 24px;
+}
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color:#0b375e;
+}
+  
+.navbar-nav .nav-link
+{
+    color:#0b375e;
+    font-weight: 500;
+    font-family:'Ubuntu' !important;
+}
+.offcanvas-title{
+    color:#0b375e ;
+    font-family: 'Righteous';
+    font-size: 24px;
+}
+.btn{
+background-color: #0b375e;
+color: white;
+transition: 0.3s ease-in-out;
+height: 40px;
+font-family:'Ubuntu' !important;
+border: none;
+}
+.btn:hover
+{
+    background-color:  #0b375e;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 8px 0px;
+   
+}
+.button{
+   background-color: #b8cee2; 
+   text-align: center;
+   border-radius: 4px;
+   margin-right: 8px;
+   text-decoration: none;
+   padding-top: 6px;
+   padding-left: 12px;
+   padding-right: 12px;
+   color: #0b375e;
+   transition: 0.3s ease-in-out;
+   font-family:'Ubuntu' !important;
+}
+.button:hover{
+    
+     background-color:  #b8cee2;
+     color: #0b375e;
+    box-shadow: rgba(78, 78, 78, 0.5) 0px 2px 8px 0px;
+ }

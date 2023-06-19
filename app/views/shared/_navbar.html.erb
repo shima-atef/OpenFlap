@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= stylesheet_link_tag "nav" %>
+ 
+  </head>
+  <body>
+<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <%= link_to "OpenFLAP", root_path, class: "navbar-brand ps-1" %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav ">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%# <%= link_to "Profile", edit_password_path, class: "nav-link m-1" %> 
+            </li>
+            <li class="nav-item">
+              <%= link_to "Home", root_path, class: "nav-link m-1" %>
+            </li>
+            <li class="nav-item">
+             <%= link_to "Editor", editor_path, class: "nav-link m-1" %> 
+            </li>
+            <li class="nav-item">
+              <%# <%= link_to "Exercise", "Exercise/Exercise-main.html", class: "nav-link m-1" %> 
+            </li>
+  
+
+            <li class="nav-item">
+              <%= link_to "Logout",users_sign_out_path, method: :delete, class: "btn m-1" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Home", root_path, class: "nav-link m-1" %>
+            </li>
+            <li class="nav-item">
+               <%= link_to "Editor", editor_path, class: "nav-link m-1" %> 
+            </li>
+            <li class="nav-item">
+              <%# <%= link_to "Exercise", "Exercise/Exercise-main.html", class: "nav-link m-1" %> 
+            </li>
+          <ul class="navbar-nav">
+            <%= link_to "Log In", new_user_session_path, class: "btn  button m-1" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn m-1" %>
+        </ul>
+          <% end %>
+        </ul>
+      </div>
+      </div>
+    </nav>
+
+
+  </body>
+</html>

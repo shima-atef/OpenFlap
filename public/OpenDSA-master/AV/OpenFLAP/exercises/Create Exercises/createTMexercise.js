@@ -212,10 +212,10 @@
 			"<div class='testCase'>"+
 				"<br>"+
 				"<br>"+
-				"<br>"+
-				"<br>"+
-				"<br>"+
-				"<br>"+
+				//"<br>"+
+				//"<br>"+
+				//"<br>"+
+				//"<br>"+
 				"<span>Test Case " + testCaseNumbers[index] + ": </span>"+
 				"<div id='transducerTwo' style='display: block;'>" +
 				"<div id='box1'><p>Input</p> <input type='text' name='testStringa'> </div>  " +
@@ -223,17 +223,18 @@
 				// <p>Input</p> <input type='text' name='testStringa" + resultCount + "'> " +
 		        // <p>Output</p> <input type='text' name='testStringb" + resultCount + "'/>" +
 				"<br>"+
-				"<br>"+
-				"<br>"+
+				//"<br>"+
+				//"<br>"+
 				"</div>" +
 			"</div>");
 		}
 		else{
 			testCases.append("" +
 			"<div class='testCase'>"+
+			"<br>"+
 				"<span>Test Case " + testCaseNumbers[index] + ": </span>"+
 				"<input type='radio' name='result" + resultCount + "' value='true' checked> <span>Accept</span>"+
-				"<input type='radio' name='result" + resultCount + "' value='false'> <span>Reject</span>"+
+				"<input type='radio' name='result" + resultCount + "' value='false'  style='margin-left: 5px;'> <span>Reject</span>"+
 				"<input type='text' name='testString'>"+
 				"<br>"+
 			"</div>");
