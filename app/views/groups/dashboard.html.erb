@@ -1,0 +1,29 @@
+<h1>Dashboard</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Member</th>
+      <% @exercises.each do |exercise| %>
+        <th><%= exercise.title %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member.user.first_name.to_s+" "+member.user.last_name.to_s %></td>
+        <% @exercises.each do |exercise| %>
+          <td>
+            <% submission = Submission.where(user_id: member.user.id, exercise_id: exercise.id).order(grade: :desc).first %>
+            <% if submission %>
+              <%= link_to submission.grade, submission %>
+            <% else %>
+              Not Attempted
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

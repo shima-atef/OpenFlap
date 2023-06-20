@@ -1,11 +1,13 @@
 class MembersController < ApplicationController
   def create
     @group = Group.find(params[:group_id])
-    @member = @group.members.build(user_id: params[:user_id])
-    if @member.save
-      redirect_to @group, notice: 'Member was successfully added.'
+    user = User.find(params[:user_id])
+
+    if @group.users.exists?(user.id)
+      redirect_to @group, notice: 'Member already exists in this group.'
     else
-      redirect_to @group, alert: 'Failed to add member.'
+      @group.users << user
+      redirect_to @group, notice: 'Member was successfully added.'
     end
   end
 

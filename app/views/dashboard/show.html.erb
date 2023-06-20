@@ -1,9 +1,0 @@
-<h1>Dashboard</h1>
-<h2>Group: <%= @group.title %></h2>
-
-<h3>Members:</h3>
-<ul>
-<% @members.each do |member| %>
- <li><%= member.user.first_name.to_s + " " + member.user.last_name.to_s %></li>
-<% end %>
-</ul>
