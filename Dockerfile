@@ -1,4 +1,4 @@
-FROM ruby:3.0.4-alpine3.14
+FROM ruby:alpine3.14
 
 WORKDIR /openflab
 
