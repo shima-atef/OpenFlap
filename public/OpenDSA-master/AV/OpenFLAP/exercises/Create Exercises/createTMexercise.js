@@ -212,14 +212,14 @@
 			"<div class='testCase'>"+
 				"<br>"+
 				"<br>"+
-				//"<br>"+
+				"<br>"+
 				//"<br>"+
 				//"<br>"+
 				//"<br>"+
 				"<span>Test Case " + testCaseNumbers[index] + ": </span>"+
 				"<div id='transducerTwo' style='display: block;'>" +
-				"<div id='box1'><p>Input</p> <input type='text' name='testStringa'> </div>  " +
-				"<div id='box2'><p>Output</p> <input type='text' name='testStringb'> </div>  " +
+				"<div id='box1'><p>Input</p> <input class='form-control' type='text' name='testStringa'> </div>  " +
+				"<div id='box2'><p>Output</p> <input class='form-control'  type='text' name='testStringb'> </div>  " +
 				// <p>Input</p> <input type='text' name='testStringa" + resultCount + "'> " +
 		        // <p>Output</p> <input type='text' name='testStringb" + resultCount + "'/>" +
 				"<br>"+
@@ -232,10 +232,10 @@
 			testCases.append("" +
 			"<div class='testCase'>"+
 			"<br>"+
-				"<span>Test Case " + testCaseNumbers[index] + ": </span>"+
+				"<span style='display: block;'>Test Case " + testCaseNumbers[index] + ": </span>"+
 				"<input type='radio' name='result" + resultCount + "' value='true' checked> <span>Accept</span>"+
 				"<input type='radio' name='result" + resultCount + "' value='false'  style='margin-left: 5px;'> <span>Reject</span>"+
-				"<input type='text' name='testString'>"+
+				"<input  class='form-control'  type='text' name='testString'>"+
 				"<br>"+
 			"</div>");
 		}

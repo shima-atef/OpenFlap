@@ -1,24 +1,48 @@
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <%= stylesheet_link_tag "tables" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Link</th>
-      <th>Solved by</th>
-      <th>Grade</th>
-      <th>Submited At</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @submission_links.each do |submission_link| %>
+  </head>
+  <body>
+<div class="container-fluid mt-4">
+  <h1 class="text-center heading">Submissions</h1>
+
+<div class="table-responsive">
+  <table id="table" class="table table-striped">
+    <thead>
       <tr>
-        <td><%= submission_link[:id] %></td>
-        <td><%= link_to 'Show Solution', submission_link[:url] %></td>
-        <td><%= submission_link[:user_email] %></td>
-        <td><%= submission_link[:grade] %></td>
-        <td><%= submission_link[:created_at] %></td>
+        <th class="text-center">ID</th>
+        <th class="text-center">Link</th>
+        <th class="text-center">Solved by</th>
+        <th class="text-center">Grade</th>
+        <th class="text-center">Submitted At</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @submission_links.each do |submission_link| %>
+        <tr>
+          <td><%= submission_link[:id] %></td>
+          <td><%= link_to 'Show Solution', submission_link[:url] %></td>
+          <td><%= submission_link[:user_email] %></td>
+          <td><%= submission_link[:grade] %></td>
+          <td><%= submission_link[:created_at] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
+<script>
+  $(document).ready(function () {
+    $('#table').DataTable({
+      // Disable the searching 
+      // of the DataTable
+      searching: false
+    });
+  });
+</script>
+
+</body>
+</html>

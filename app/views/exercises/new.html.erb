@@ -9,6 +9,9 @@
         background-image: radial-gradient(circle, #051c21, #294147, #506b71, #7a979e, #a6c6cd);
 
 }
+.testCase{
+  margin-left:20px;
+}
 #transducerTwo {
     display: none;
 }
@@ -46,11 +49,7 @@
         <h1 class="text-center mb-5">Exercise Generator</h1>
 
         
-        <div>
-     <div class="form-group mb-2">
-  <label for="exerciseName" class="mb-1">Exercise Name</label>
-  <input id="exerciseName" type="text" name="mode2" class="form-control">
-</div>
+   
        <div class="form-group mb-3">
   <label for="mode2">Select a mode:</label>
   <div class="form-check form-check-inline">
@@ -86,7 +85,7 @@
 
 
 
-        </div>
+      
             <div id="problems">
                 <fieldset>
                     <legend>Problem 1</legend>
@@ -98,15 +97,20 @@
                           <input type="radio" name="mode" value="yesGraph">  With Wrong Graph
                         </label>
                        </div>
-<div>
-  <input type="radio" name="show1" value="true" checked>
-  <span>Expression: </span>
-  <input type="text" name="expression">
+<div class="form-group">
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="show1" id="showExpression" value="true" checked>
+    <label class="form-check-label d-block" for="showExpression">Expression:</label>
+    <input class="form-control" type="text" name="expression">
+  </div>
 </div>
-<div style="margin-top: 10px;">
-  <input type="radio" name="show1" value="false">
-  <span>Description: </span>
-  <input type="text" name="description">
+
+<div class="form-group" style="margin-top: 10px;">
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="show1" id="showDescription" value="false">
+    <label class="form-check-label d-block" for="showDescription">Description:</label>
+    <input class="form-control" type="text" name="description">
+  </div>
 </div>
 
 
@@ -120,32 +124,35 @@
                                 <input type="radio" name="result1" value="false"> <span>Reject</span>
                             </div>
 
-                            <input id="transducerOne" type="text" name="testString">
+                            <input class="form-control" id="transducerOne" type="text" name="testString">
 
                             <div id="transducerTwo">
                                 <div id="box1">
                                     <p>Input</p>
-                                    <input type="text" name="testStringa">
+                                    <input class="form-control"  type="text" name="testStringa">
                                 </div>
                                 <div id="box2">
                                     <p>Output</p>
-                                    <input type="text" name="testStringb">
+                                    <input class="form-control"  type="text" name="testStringb">
                                 </div>
 
                                 <br>
                             </div>
                         </div>
                       </div>
+                      <div class="container text-center mt-2">
                         <button type="button" id="addTestCase" class="btn m-2">Add another test case</button>
                         <button type="button" id="editGraph"  class="btn m-2">Edit Graph</button>
                         <button type="button" id="uploadGraph"  class="btn m-2">Upload Graph</button>
                         <input type="file" id="upload" style="display: none">
- 
+                          <button id="getjson"  class="btn m-2">Get JSON</button>
+                          <button id="fixerButton"  class="btn m-2">FAFixer</button>
+                          <button id="testerButton"  class="btn m-2">FATester</button>
+                         </div>
+
                 </fieldset>
             
-        <button id="getjson"  class="btn m-2">Get JSON</button>
-        <button id="fixerButton"  class="btn m-2">FAFixer</button>
-        <button id="testerButton"  class="btn m-2">FATester</button>
+      
             </div>
         </form>
         </div>
