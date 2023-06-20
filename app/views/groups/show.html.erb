@@ -11,7 +11,12 @@
 <h2>Add Member</h2>
 <%= form_with url: group_members_path(@group) do |form| %>
   <%= form.collection_select :user_id, User.all, :id, :email %>
-  <%= form.submit 'Add Member' %>
+    <% if User.any? %>
+    <%= form.submit "Add Member" %>
+  <% else %>
+    <p>No Users available.</p>
+    <%= form.submit "Add Member", disabled: true %>
+  <% end %>
 <% end %>
 
 
@@ -28,7 +33,12 @@
   <%= form.label :exercise_id %>
   <%= form.collection_select :exercise_id, Exercise.all, :id, :title %>
 
-  <%= form.submit "Add Exercise" %>
+  <% if Exercise.any? %>
+    <%= form.submit "Add Exercise" %>
+  <% else %>
+    <p>No exercises available.</p>
+    <%= form.submit "Add Exercise", disabled: true %>
+  <% end %>
 <% end %>
 
 
