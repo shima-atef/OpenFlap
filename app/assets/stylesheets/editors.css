@@ -1,11 +1,9 @@
 .edit {
-    background-image: radial-gradient(circle, #051c21, #294147, #506b71, #7a979e, #a6c6cd);
-   /* background-color: #294147; */
+   background: radial-gradient(circle, rgba(11,55,94,1) 0%, rgba(157,164,170,1) 100%, rgba(222,213,204,1) 100%);
  }
  
  h1 {
    text-align: center;
-   margin-bottom: 16px;
    font-family: 'Ubuntu', sans-serif;
    font-size: 40px;
    color: white;
@@ -13,27 +11,30 @@
  
  .card {
    text-align: center;
-   height: 180px;
-   margin: 36px auto;
-   position: relative;
-   border-radius: 10px;
-   background-color: white;
+   height: 250px;
+   background:#fff;
    color: #0b375e;
    transition: transform 0.5s ease-in-out;
+
  }
  .card-body{
    display: flex;
    flex-direction: column;
    justify-content: center;
  }
- .card-title{
-   font-weight:500;
- }
- .card:hover {
-   transform: scale(1.1);
+ .card-body a{
+  text-decoration: none;
+  font-weight:500;
+  color: #0b375e;
+
  }
  
- a:hover {
+ .card:hover {
+   transform: scale(1.1);
+   box-shadow: none;
+ }
+ 
+ /* a:hover {
    text-decoration: none;
    color: #0b375e;
- }
+ } */

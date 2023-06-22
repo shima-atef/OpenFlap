@@ -3,13 +3,15 @@
     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 12px 0px;
     padding-top: 10px;
 }    
-.navbar-toggler:focus {
+ .navbar-toggler:focus {
   box-shadow: none;
-}
+} 
 .navbar-brand{
       color:#0b375e ;
-      font-family: 'Righteous';
+      font-family: 'Righteous' !important;
       font-size: 24px;
+      font-weight: 400 !important;
+      padding-left: 12px !important;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -18,21 +20,22 @@
   
 .navbar-nav .nav-link
 {
-    color:#0b375e;
-    font-weight: 500;
-    font-family:'Ubuntu' !important;
-}
-.offcanvas-title{
-    color:#0b375e ;
-    font-family: 'Righteous';
-    font-size: 24px;
+  font-family: 'Ubuntu' !important;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #0b375e;
+  padding: 0 16px !important;
+  margin: 10px;
 }
 .btn{
 background-color: #0b375e;
 color: white;
-transition: 0.3s ease-in-out;
 height: 40px;
 font-family:'Ubuntu' !important;
+margin: 6px 6px !important;
+padding: 6px 10px;
+transition: 0.3s ease-in-out;
 border: none;
 }
 .btn:hover
@@ -45,19 +48,16 @@ border: none;
 .button{
    background-color: #b8cee2; 
    text-align: center;
-   border-radius: 4px;
-   margin-right: 8px;
+   border-radius: 5px;
+   margin: 6px 6px !important;
    text-decoration: none;
-   padding-top: 6px;
-   padding-left: 12px;
-   padding-right: 12px;
+   padding: 6px 10px;
    color: #0b375e;
    transition: 0.3s ease-in-out;
-   font-family:'Ubuntu' !important;
 }
 .button:hover{
-    
      background-color:  #b8cee2;
      color: #0b375e;
-    box-shadow: rgba(78, 78, 78, 0.5) 0px 2px 8px 0px;
+     box-shadow: rgba(78, 78, 78, 0.5) 0px 2px 8px 0px;
  }
+ 

@@ -1,7 +1,3 @@
-.log{
-    
-    background-image: radial-gradient(circle, #051c21, #294147, #506b71, #7a979e, #a6c6cd);
-}
 
 form {
 background-color:#051c2f;
@@ -20,4 +16,21 @@ margin-top: 60px;
 }
 .form-group .button:hover{
     box-shadow: rgba(86, 86, 94, 0.5) 0px 4px 8px 0px;
+}
+.form-group .Log{
+        display: block;
+        width: 100%;
+        background-color: #b8cee2; 
+        text-align: center;
+        border-radius: 10px;
+        margin: 16px 0 0 0 !important;
+        text-decoration: none;
+        padding: 6px 10px;
+        color: #0b375e;
+        transition: 0.3s ease-in-out;
+    }
+.form-group .Log:hover{
+    background-color:  #b8cee2;
+    color: #0b375e;
+    box-shadow: rgba(78, 78, 78, 0.5) 0px 2px 8px 0px;
 }

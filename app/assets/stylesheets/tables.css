@@ -1,3 +1,7 @@
+.dropdown .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+background-color: #0b375e;
+color: #fff;
+}
 table.dataTable.table-striped > tbody > tr.odd > *{
     color:#0b375e;
    }
@@ -24,10 +28,11 @@ table.dataTable.table-striped > tbody > tr.odd > *{
       font-size:18px;
       font-weight:lighter;
     }
-    
+  
     th{
        
     color:#0b375e;
+    font-size: 18px;
    }
    .badge{
     color:#0b375e;

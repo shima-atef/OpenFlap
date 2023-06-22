@@ -6,7 +6,7 @@ body{
     background-image: url(team.jpg); 
     background-size: 100% 100%;
     background-position: center center;
-    height: 500px; /* set a default height for the background image */
+    height: 600px; /* set a default height for the background image */
     position: relative;
   }
   
@@ -24,21 +24,22 @@ body{
     color:  #07253f;
     font-weight: bold;
   }
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     .bg-image {
-      height: 100vh; /* set the height to the full viewport height on larger screens */
+      height: 100vh; /* set the height to the full viewport height on larger screens 
     }
-  }
-
+  } */
+.block_crads{
+  margin-top: -150px;
+}
 .card{
- 
-    height:400px;
-   background: whitesmoke;
+    height: 450px;
+    background: whitesmoke;
     margin-top: 40px;
-    /* border-radius: 20px; */
     transition: 0.5s ease;
     background-color: #051c2f;
     color: white;
+    
 
 }
 .card:hover{
@@ -64,12 +65,63 @@ body{
   font-size: 70px;
   word-spacing: 35px;
 }
+.title h1 span{
+color: #07253f;
+font-family: 'Poppins';
+font-weight: 700;
+font-size: 60px;
+line-height: 93.72px;
+}
+.title h1 {
+  color: #07253f;
+font-family: 'Poppins';
+font-weight: 700;
+font-size: 50px;
+line-height: 93.72px;
+}
+.Options h2{
+font-family: Ubuntu;
+font-size: 48px;
+font-weight: 700;
+line-height: 62px;
+color:#07253f;
+}
+.Options p{
+font-family: 'Ubuntu';
+font-size: 22px;
+font-weight: 400;
+line-height: 46px;
+color:#07253f;
+} 
+.Options .edit_lastP{
+  font-family: 'Ubuntu';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 46px;
+  color:#07253f;
+  } 
+ .Options img{
+  height: 100%;
+  width: 100%;
+} 
+.Options .coloring{
+  background: rgba(222, 213, 204, 0.6);
+}
+.Options .second_color{
+  background: rgba(9, 55, 97, 0.2);
 
-
+}
+.Options ul{
+  list-style: none;
+  color:#07253f;
+  font-size: 22px;
+  font-family:'Ubuntu';
+  font-weight: 400;
+}
 .footer-title
 {
     font-family: 'Ubuntu';
-    font-size: 16px;
+    font-size: 20px;
     color: #0b375e;
 }
 hr {
@@ -79,6 +131,7 @@ hr {
   }
 .footer-disc
 {
+  font-size: 20px;
     padding-bottom: 20px;
     color: #0b375e;
 }

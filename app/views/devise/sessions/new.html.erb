@@ -6,7 +6,7 @@
 <body class="log">
 <div class="container mb-3">
   <div class="row justify-content-center">
-    <div class="col-lg-6 col-md-9 col-sm-12">
+    <div class="col-lg-5 col-md-9 col-sm-12">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
            <% if flash[:alert].present? %>
           <p class="alert alert-warning text-center"><%= flash[:alert] %></p>
@@ -38,7 +38,7 @@
 
         <div class="form-group">
           
-            <%= f.submit "Log in", class: "btn button mt-3" %>
+            <%= f.submit "Log in", class: "btn Log " %>
           </div>
         
          <%= render "devise/shared/links" %>

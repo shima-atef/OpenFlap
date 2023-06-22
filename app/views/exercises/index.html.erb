@@ -8,11 +8,11 @@
 
 
 <div class="container-fluid mt-4">
-  <h1 class="text-center heading">All Submissions</h1>
+  <h1 class="text-center heading">All Exercises</h1>
   <div class="row justify-content-center justify-content-md-end">
     <div class="col-md-1 col-auto">
       <%= content_tag :div, class: "dropdown" do %>
-        <%= button_tag "Type", type: "button", class: "btn btn-secondary dropdown-toggle m-1", data: { bs_toggle: "dropdown" }, aria: { expanded: "false" } %>
+        <%= button_tag "Type", type: "button", class: "btn btn dropdown-toggle m-1", data: { bs_toggle: "dropdown" }, aria: { expanded: "false" } %>
         <%= content_tag :ul, class: "dropdown-menu dropdown-menu-right" do %>
           <li><%= link_to "All Exercises", exercises_path, class: "dropdown-item" %></li>
           <li><%= link_to "CLF Exercises", exercises_path(type: "CFL"), class: "dropdown-item" %></li>
