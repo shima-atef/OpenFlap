@@ -35,25 +35,10 @@ Rails.application.routes.draw do
   get 'lib/odsaAV-min.js' => proc { [200, {}, [File.read(Rails.root.join('public', 'lib', 'odsaAV.js'))]] }
 
   resources :groups do
-    resources :members, only: %i[create destroy]
+    resources :members, only: %i[new create]
+    resources :tasks, only: %i[new create]
   end
 
-  Rails.application.routes.draw do
-    resources :groups do
-      resources :members, only: %i[create destroy]
-    end
-  end
-
-  resources :groups do
-    resources :tasks
-  end
-  resources :groups, only: %i[new create show] do
-    post 'group_tasks', on: :member
-  end
-
-  resources :groups, only: %i[new create show] do
-    post 'tasks', to: 'tasks#create'
-  end
   get 'editor', to: 'editor#index'
   get 'editor/fa', to: 'editor#fa'
   get 'editor/pda', to: 'editor#pda'

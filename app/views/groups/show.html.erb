@@ -1,5 +1,9 @@
-<h1><%= @group.title %></h1>
-<p><%= @group.description %></p>
+<%= stylesheet_link_tag 'groups' %>
+
+
+<h1 style="color: black;"><%= @group.title %></h1>
+<h2 style="color: black;"><%= @group.description %></h2>
+<p><%= link_to 'Dashboard', group_dashboard_path(@group), class: 'dashboard-link' %></p>
 
 <h2>Members</h2>
 <ul>
@@ -8,37 +12,14 @@
   <% end %>
 </ul>
 
-<h2>Add Member</h2>
-<%= form_with url: group_members_path(@group) do |form| %>
-  <%= form.collection_select :user_id, User.all, :id, :email %>
-    <% if User.any? %>
-    <%= form.submit "Add Member" %>
-  <% else %>
-    <p>No Users available.</p>
-    <%= form.submit "Add Member", disabled: true %>
-  <% end %>
-<% end %>
-
-
+<%= link_to 'Add Members', new_group_member_path(group_id: @group.id), class: 'btn btn-primary' %>
 
 <h2>Exercises</h2>
 <ul>
   <% @group.tasks.each do |task| %>
-    <li><%= task.exercise.title %></li>
+    <li><%= link_to task.exercise.title, exercise_path(task.exercise) %></li>
   <% end %>
 </ul>
 
-<h2>Add Exercise</h2>
-<%= form_with(model: @task, url: group_tasks_path(@group), local: true) do |form| %>
-  <%= form.label :exercise_id %>
-  <%= form.collection_select :exercise_id, Exercise.all, :id, :title %>
 
-  <% if Exercise.any? %>
-    <%= form.submit "Add Exercise" %>
-  <% else %>
-    <p>No exercises available.</p>
-    <%= form.submit "Add Exercise", disabled: true %>
-  <% end %>
-<% end %>
-
-
+<%= link_to 'Add Tasks', new_group_task_path(group_id: @group.id), class: 'btn btn-primary' %>

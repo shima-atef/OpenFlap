@@ -1,9 +1,7 @@
-<h1>All Groups</h1>
+<h1 style="color: black;">All Groups</h1>
 
 <% @groups.each do |group| %>
   <h2><%= link_to group.title, group %></h2>
   <p><%= group.description %></p>
-  <%= link_to 'Dashboard', group_dashboard_path(group) %>
-
+  <p><strong>Members:</strong> <%= group.members.count %></p>
 <% end %>
-
