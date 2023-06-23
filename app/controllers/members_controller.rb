@@ -6,43 +6,25 @@ class MembersController < ApplicationController
 
   def create
     @group = Group.find(params[:group_id])
-    exercise_ids = params[:task][:exercise_ids]
+    member_emails = params[:member][:emails].split("\n").map(&:strip)
 
-    if exercise_ids.blank?
-      redirect_to @group, alert: 'Please enter at least one exercise ID.'
+    if member_emails.blank?
+      redirect_to @group, alert: 'Please enter at least one member email.'
       return
     end
+    member_emails = params[:member][:emails].split("\n").map(&:strip)
 
-    errors = []
-    exercise_ids.split("\n").map(&:strip).each do |exercise_id|
-      next if exercise_id.blank?
+    member_emails.each do |email|
+      next if email.blank?
 
-      task = Task.new(exercise_id: exercise_id, group: @group)
-      if @group.exercises.exists?(exercise_id)
-        errors << "Exercise #{exercise_id} already exists in this group."
-      elsif task.save
-        @group.tasks << task
-      else
-        errors << "Error adding Exercise #{exercise_id}."
+      user = User.find_by(email: email)
+      next if user.nil?
+
+      unless @group.members.exists?(user_id: user.id)
+        @group.members.create(user: user)
       end
     end
 
-    if errors.empty?
-      redirect_to @group, notice: 'Exercises added successfully.'
-    else
-      redirect_to @group, alert: errors.join('<br>').html_safe
-    end
-  end
-
-  if errors.empty?
-    redirect_to @group, notice: 'Exercises added successfully.'
-  else
-    redirect_to @group, alert: errors.join('<br>').html_safe
-  end
-  def destroy
-    @member = Member.find(params[:id])
-    @group = @member.group
-    @member.destroy
-    redirect_to @group, notice: 'Member was successfully removed.'
+    redirect_to group_path(@group)
   end
 end
