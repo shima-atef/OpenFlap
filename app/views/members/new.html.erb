@@ -1,0 +1,12 @@
+<h1>Add Members</h1>
+
+<%= form_with(model: @member, url: group_members_path(@group), local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :emails %>
+    <%= form.text_area :emails, class: 'form-control', rows: 5, placeholder: 'Emails separated by new line' %>
+  </div>
+
+  <%= form.submit 'Add Members', class: 'btn btn-primary' %>
+<% end %>
+
+<%= link_to 'Back to Group', group_path(@group), class: 'btn btn-secondary' %>

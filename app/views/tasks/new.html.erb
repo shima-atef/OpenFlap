@@ -1,0 +1,12 @@
+<h1>Add Exercises</h1>
+
+<%= form_with(model: @task, url: group_tasks_path(@group), local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :exercise_ids %>
+    <%= form.text_area :exercise_ids, class: 'form-control', rows: 5, placeholder: "Exercise IDs separated by new line" %>
+  </div>
+
+  <%= form.submit 'Add Exercises', class: 'btn btn-primary' %>
+<% end %>
+
+<%= link_to 'Back to Group', group_path(@group), class: 'btn btn-secondary' %>

@@ -38,6 +38,9 @@ class GroupsController < ApplicationController
     @exercises = @group.exercises
   end
 
+
+
+
   private
 
   def group_params
