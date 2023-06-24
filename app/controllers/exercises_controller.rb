@@ -101,10 +101,14 @@ class ExercisesController < ApplicationController
       
         # DELETE /exercises/:id
         def destroy
-          @exercise = Exercise.find(params[:id])
-          @exercise.destroy
+          exercise = Exercise.find(params[:id])
+          Submission.where(exercise_id: exercise.id).destroy_all
+          Task.where(exercise_id: exercise.id).destroy_all
+          file_path = Rails.root.join('public', 'exercises_file', "#{exercise.id}.json")
+          File.delete(file_path) if File.exist?(file_path)
+          exercise.destroy
       
-          redirect_to exercises_url, notice: 'Exercise was successfully destroyed.'
+          redirect_to exercises_path, notice: 'Exercise was successfully deleted.'
         end
       
         private

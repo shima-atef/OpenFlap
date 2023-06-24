@@ -5,20 +5,15 @@
 <h2 style="color: black;"><%= @group.description %></h2>
 <p><%= link_to 'Dashboard', group_dashboard_path(@group), class: 'dashboard-link' %></p>
 
-<h2>Members</h2>
-<ul>
-  <% @members.each do |member| %>
-    <li><%= member.user.first_name.to_s + " " + member.user.last_name.to_s %></li>
-  <% end %>
-</ul>
 
-<%= link_to 'Add Members', new_group_member_path(group_id: @group.id), class: 'btn btn-primary' %>
+
+
 
 <h2>Exercises</h2>
 <ul>
   <% @group.tasks.each do |task| %>
-    <li><%= link_to task.exercise.title, exercise_path(task.exercise) %></li>
-  <% end %>
+ <li><%= link_to task.exercise.title, exercise_path(task.exercise) %></li>
+<% end %>
 </ul>
 
 

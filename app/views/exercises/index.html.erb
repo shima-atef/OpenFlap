@@ -29,6 +29,7 @@
     <table id="table" class="table table-striped">
       <thead class="thead">
         <tr>
+         <th class="text-center">ID</th>
           <th class="text-center">Name</th>
           <th class="text-center">Type</th>
           <th class="text-center">Created By</th>
@@ -39,6 +40,7 @@
       <tbody>
         <% @exercises.each do |exercise| %>
           <tr>
+            <td><%= exercise.id%></td>
             <td><%= link_to exercise.title , exercise%></td>
             <td><%= exercise.exercise_type%></td>
             <td><%= exercise.user.email%></td>

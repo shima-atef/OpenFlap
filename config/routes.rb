@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
+  
 
   post 'exercises/:exercise_id/submissions', to: 'submissions#create'
 
@@ -30,6 +31,8 @@ Rails.application.routes.draw do
   # to get all exercises that create by user
   get 'users/:id/exercises', to: 'exercises#user_exercises', as: 'user_exercises'
   # get 'exercises/:id', to: 'exercises#show', as: 'exercises'
+
+  
 
   get 'lib/odsaUtils-min.js' => proc { [200, {}, [File.read(Rails.root.join('public', 'lib', 'odsaUtils.js'))]] }
   get 'lib/odsaAV-min.js' => proc { [200, {}, [File.read(Rails.root.join('public', 'lib', 'odsaAV.js'))]] }
