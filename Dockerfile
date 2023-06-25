@@ -18,6 +18,8 @@ RUN bundle install
 
 RUN rails db:migrate
 
+RUN rails db:seed
+
 EXPOSE 3000
 
 CMD rm -f tmp/pids/server.pid && rails s -b 'ssl://0.0.0.0:3000?key=localhost.key&cert=localhost.crt'
