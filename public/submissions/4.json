@@ -1,0 +1,1 @@
+[{"expression":"","description":"Odd frequency","type":"DFA","testCases":[{"":false},{"ab":true},{"aab":false},{"baa":false},{"ba":true},{"a":true},{"b":true},{"bbab":true}],"graph":{"nodes":[],"edges":[],"names":[],"shorthand":false}}]
