@@ -81,8 +81,10 @@
 				var _case = {},
 						testString = $(this).find("input[name='testStringa']")[0].value,
 						result = $(this).find("input[name='testStringb']")[0].value;
-				// var result = resultButtons[0].checked ? true : false;
+						resultButtons = $(this).find("input[type='radio']");
+				
 				_case[testString] = result;
+				_case['ShowTestCase'] = resultButtons[0].checked ? true : false;
 				problem.testCases.push(_case);
 			});
 			problem.graph = jQuery.parseJSON(localStorage['problem' + index]);
@@ -94,7 +96,9 @@
 						testString = $(this).find("input[name='testString']")[0].value,
 						resultButtons = $(this).find("input[type='radio']");
 				var result = resultButtons[0].checked ? true : false;
+			
 				_case[testString] = result;
+				_case['ShowTestCase'] = resultButtons[2].checked ? true : false;
 				problem.testCases.push(_case);
 			});
 			problem.graph = jQuery.parseJSON(localStorage['problem' + index]);
@@ -213,13 +217,20 @@
 				"<br>"+
 				"<br>"+
 				"<br>"+
-				//"<br>"+
+				
+				
+				"<br>"+
 				//"<br>"+
 				//"<br>"+
 				"<span>Test Case " + testCaseNumbers[index] + ": </span>"+
+				
+				
 				"<div id='transducerTwo' style='display: block;'>" +
+				"<input type='radio' name='showTest" + resultCount + "' value='true' checked> Show Test Case" +
+                "<input type='radio' name='showTest" + resultCount + "' value='false'> Hide Test Case" +
 				"<div id='box1'><p>Input</p> <input class='form-control' type='text' name='testStringa'> </div>  " +
 				"<div id='box2'><p>Output</p> <input class='form-control'  type='text' name='testStringb'> </div>  " +
+				
 				// <p>Input</p> <input type='text' name='testStringa" + resultCount + "'> " +
 		        // <p>Output</p> <input type='text' name='testStringb" + resultCount + "'/>" +
 				"<br>"+
@@ -235,6 +246,9 @@
 				"<span style='display: block;'>Test Case " + testCaseNumbers[index] + ": </span>"+
 				"<input type='radio' name='result" + resultCount + "' value='true' checked> <span>Accept</span>"+
 				"<input type='radio' name='result" + resultCount + "' value='false'  style='margin-left: 5px;'> <span>Reject</span>"+
+				"<br>"+
+				"<input type='radio' name='showTest" + resultCount + "' value='true' checked> Show Test Case" +
+                "<input type='radio' name='showTest" + resultCount + "' value='false'> Hide Test Case" +
 				"<input  class='form-control'  type='text' name='testString'>"+
 				"<br>"+
 			"</div>");
