@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root 'home#index'
+  get 'file_upload',to:'file_upload#index'
+  post 'file_upload/create', as: 'upload_file'
+  
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
   

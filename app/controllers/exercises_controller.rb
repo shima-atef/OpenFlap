@@ -39,10 +39,7 @@ class ExercisesController < ApplicationController
         
           data = JSON.parse(request.body.read)
           description = data['problems'][0]['description']
-        
-          if description.length > 10 
-            description = description.slice(0, 10) + "..." 
-          end 
+      
         
           @exercise = Exercise.new(user_id: current_user.id, title: description, exercise_type: data["type"])
           problem = data["problems"][0]
@@ -107,9 +104,7 @@ class ExercisesController < ApplicationController
           file_path = Rails.root.join('public', 'exercises_file', "#{exercise.id}.json")
           File.delete(file_path) if File.exist?(file_path)
           exercise.destroy
-      
-          redirect_to exercises_path, notice: 'Exercise was successfully deleted.'
-        end
+       end
       
         private
       

@@ -1,0 +1,36 @@
+
+<br>
+<br>
+<br>
+<% if flash[:error] %>
+  <div class="alert alert-danger"><%= flash[:error] %></div>
+<% end %>
+<%= form_tag(upload_file_path, multipart: true) do %>
+  <%= file_field_tag 'file' %>
+  
+  <p>Select the type of file:</p>
+
+  <%= radio_button_tag 'file_type', 'CFL' %>
+  <%= label_tag :file_type_cfl, 'CFL' %><br>
+
+  <%= radio_button_tag 'file_type', 'FA' %>
+  <%= label_tag :file_type_fa, 'FA' %><br>
+
+  <%= radio_button_tag 'file_type', 'grammar' %>
+  <%= label_tag :file_type_grammar, 'Grammar' %><br>
+
+  <%= radio_button_tag 'file_type', 'PDA' %>
+  <%= label_tag :file_type_pda, 'PDA' %><br>
+
+  <%= radio_button_tag 'file_type', 'Regular' %>
+  <%= label_tag :file_type_regular, 'Regular' %><br>
+
+  <%= radio_button_tag 'file_type', 'TM' %>
+  <%= label_tag :file_type_tm, 'Turing Machine' %><br>
+
+  <%= radio_button_tag 'file_type', 'NFAtoDFA' %>
+  <%= label_tag :file_type_nfa_to_dfa, 'NFA to DFA' %><br>
+
+  <%= submit_tag 'Upload' %>
+<% end %>
+

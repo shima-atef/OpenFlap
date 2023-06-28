@@ -59,7 +59,7 @@
             'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
           },
           success: function(response) {
-            window.location.href = response.redirect_url;
+            console.log(response);
           },
           error: function(xhr, textStatus, errorThrown) {
             console.error(xhr.responseText);

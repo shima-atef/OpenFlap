@@ -34,12 +34,25 @@
       margin-bottom: 10px;
     }
   }
+  .exercise-file-upload {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #eee;
+  /* add more styles here */
+}
+
+.exercise-file-upload a {
+  color: blue;
+  text-decoration: underline;
+  /* add more styles here */
+}
 </style>
 </head>
 
 <body class="ex-bg">
 <div id="error-message"></div> 
-
+ 
+ <div class="exercise-file-upload"><%= link_to "upload exercise json file ", file_upload_path %></div>
     <div id="container">
     <div class="row justify-content-center">
     <div class="col-lg-6 col-md-9 col-sm-12">

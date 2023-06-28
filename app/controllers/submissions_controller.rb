@@ -39,6 +39,7 @@ class SubmissionsController < ApplicationController
       file_name = "#{data['exerciseId']}.json"
       file_path = Rails.root.join('public', 'exercises_file', file_name)
       file_content = File.read(file_path)
+      file_content = file_content.gsub(/\s+/, "")
       file_content = file_content[1..-2]
       submission_data = JSON.parse(file_content)
       submission_data['graph'] = JSON.parse(progress)

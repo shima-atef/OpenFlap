@@ -12,4 +12,6 @@
   <%= render 'RegularExercise' %>
     <% elsif @exercise_type == "TM"%>
   <%= render 'TMExercise' %>
+  <% elsif @exercise_type == "NFAtoDFA"%>
+  <%= render 'NFAtoDFAexercise' %>
 <% end %>

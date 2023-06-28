@@ -6,7 +6,7 @@ class Exercise < ApplicationRecord
     has_many :groups, through: :tasks
     validates :title, presence: true
  
-    validate :title_exercise_type_uniqueness
+
     
     private
     

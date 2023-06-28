@@ -21,6 +21,7 @@
           <li><%= link_to "PDA Exercises", exercises_path(type: "PDA"), class: "dropdown-item" %></li>
           <li><%= link_to "Regular Exercises", exercises_path(type: "Regular"), class: "dropdown-item" %></li>
           <li><%= link_to "TM Exercises", exercises_path(type: "TM"), class: "dropdown-item" %></li>
+          <li><%= link_to "NFA to DFA Exercise", exercises_path(type: "NFAtoDFA"), class: "dropdown-item" %></li>
         <% end %>
       <% end %>
     </div>
@@ -41,7 +42,7 @@
         <% @exercises.each do |exercise| %>
           <tr>
             <td><%= exercise.id%></td>
-            <td><%= link_to exercise.title , exercise%></td>
+           <td><%= link_to truncate(exercise.title, length: 20, omission: '...'), exercise %></td>
             <td><%= exercise.exercise_type%></td>
             <td><%= exercise.user.email%></td>
             <td><%= exercise.created_at%></td>
