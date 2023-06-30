@@ -6,8 +6,8 @@
 
   </head>
   <body>
-<div class="container-fluid mt-4">
-  <h1 class="text-center heading">Submissions</h1>
+<div class="container-fluid mt-5">
+  <h1 class="text-center heading mt-5 mb-5">Submissions</h1>
 
 <div class="table-responsive">
   <table id="table" class="table table-striped">
@@ -24,8 +24,8 @@
       <% @submission_links.each do |submission_link| %>
         <tr>
           <td><%= submission_link[:id] %></td>
-          <td><%= link_to 'Show Solution', submission_link[:url] %></td>
-          <td><%= submission_link[:user_email] %></td>
+          <td><%= link_to 'Show Solution', submission_link[:url],class:"badge"%></td>
+          <td><%= submission_link[:user_email]%></td>
           <td><%= submission_link[:grade] %></td>
           <td><%= submission_link[:created_at] %></td>
         </tr>

@@ -1,10 +1,48 @@
-<h1>Profile</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= stylesheet_link_tag "profile" %>
+    <title>profile</title> 
+  </head>
+  <body>
 
-<p>Name: <%= @user.first_name %></p>
-<p>Email: <%= @user.email %></p>
-<li><%= link_to 'Edit Profile', edit_users_profile_path %></li>
-<li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-<li><%= link_to 'View My Submissions', user_submissions_path(@user) %></li>
-<li><%= link_to 'View My exercises', user_exercises_path(@user) %></li>
-<li><%= link_to "Create New Exercise", new_exercise_path %></li>
-   
+<div class="container-fluid mt-5">
+  <div class="row">
+       <h1 class=" profile text-center mt-2 mb-5">Profile</h1>
+
+    <div class="col-md-3 mb-4 mt-5">
+      <ul class="profile_list d-flex flex-column">
+        <li class="my-4"><i class="fa-solid fa-pen"></i><%= link_to 'Edit Profile', edit_user_registration_path,class: 'my-link' %></li>
+        <li class="my-4"><i class="fa-sharp fa-solid fa-eye"></i><%= link_to 'My exercises', user_exercises_path(@user),class: 'my-link'%></li>
+        <li class="my-4"><i class="fa-solid fa-paper-plane"></i><%= link_to 'My Submissions', user_submissions_path(@user),class: 'my-link' %></li>
+        <li class="my-4"><i class="fa-solid fa-plus"></i><%= link_to "Create New Exercise", new_exercise_path,class: 'my-link'%></li>
+        <li class="my-4"><i class="fa-solid fa-sign-out"></i><%= link_to 'Sign out', destroy_user_session_path,class: 'my-link', method: :delete %></li>
+      </ul>
+    </div>
+   <div class="col-md-8 offset-md-1 mb-4">
+  <div class="info">
+    <h5 class="mt-5">BASIC INFO</h5>
+  </div>
+  <div class="horizontal_line mt-5"></div>
+
+   <div class="my-form my-5" >
+    
+    <div class="form-group my-4">
+     <%= label_tag "first_name", "FIRST NAME", class: "input-label" %>
+    <%= text_field_tag "first_name", @user.first_name, class: "form-control", readonly: true %>
+   </div>
+
+    <div class="form-group my-4">
+    <%= label_tag "first_name", "LAST NAME", class: "input-label" %>
+    <%= text_field_tag "first_name", @user.last_name, class: "form-control", readonly: true %>
+    </div>
+   <div class="form-group my-4">
+    <%= label_tag "email", "EMAIL", class: "input-label" %>
+    <%= text_field_tag "email", @user.email, class: "form-control", readonly: true %>
+    </div>
+</div>
+ </div>
+</div>
+
+</body>
+</html>

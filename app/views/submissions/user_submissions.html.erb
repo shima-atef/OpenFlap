@@ -6,8 +6,8 @@
 
   </head>
   <body>
-<div class="container-fluid mt-4">
-  <h1 class="text-center heading">My Submissions</h1>
+<div class="container-fluid mt-5">
+  <h1 class="text-center heading mt-5 mb-5">My Submissions</h1>
 
 <div class="table-responsive">
   <table id="table" class="table table-striped">
@@ -24,9 +24,8 @@
       <% @submissions.each do |submission| %>
         <tr>
           <td><%= submission.id %></td>
-        
-          <td><%=   link_to truncate(submission.exercise.title, length: 20, omission: '...'), exercise_path(submission.exercise) %></td>
-          <td><%= link_to "Show Solution", submission_path(submission) %></td>
+          <td><%= link_to submission.exercise.title, exercise_path(submission.exercise),class:"badge" %></td>
+          <td><%= link_to "Show Solution", submission_path(submission),class:"badge" %></td>
           <td><%= submission.grade %></td>
           <td><%= submission.created_at %></td>
         </tr>

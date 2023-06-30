@@ -7,25 +7,25 @@
   <body>
 
 
-<div class="container-fluid mt-4">
-  <h1 class="text-center heading">All Exercises</h1>
-  <div class="row justify-content-center justify-content-md-end">
+<div class="container-fluid mt-5">
+  <h1 class="text-center heading mt-5 mb-5">All Exercises</h1>
+  <%# <div class="row justify-content-center justify-content-md-end">
     <div class="col-md-1 col-auto">
-      <%= content_tag :div, class: "dropdown" do %>
-        <%= button_tag "Type", type: "button", class: "btn btn dropdown-toggle m-1", data: { bs_toggle: "dropdown" }, aria: { expanded: "false" } %>
-        <%= content_tag :ul, class: "dropdown-menu dropdown-menu-right" do %>
-          <li><%= link_to "All Exercises", exercises_path, class: "dropdown-item" %></li>
-          <li><%= link_to "CLF Exercises", exercises_path(type: "CFL"), class: "dropdown-item" %></li>
-          <li><%= link_to "FA Exercises", exercises_path(type: "FA"), class: "dropdown-item" %></li>
-          <li><%= link_to "grammar Exercises", exercises_path(type: "grammar"), class: "dropdown-item" %></li>
-          <li><%= link_to "PDA Exercises", exercises_path(type: "PDA"), class: "dropdown-item" %></li>
-          <li><%= link_to "Regular Exercises", exercises_path(type: "Regular"), class: "dropdown-item" %></li>
-          <li><%= link_to "TM Exercises", exercises_path(type: "TM"), class: "dropdown-item" %></li>
-          <li><%= link_to "NFA to DFA Exercise", exercises_path(type: "NFAtoDFA"), class: "dropdown-item" %></li>
-        <% end %>
-      <% end %>
+      <%= content_tag :div, class: "dropdown" do 
+        <%= button_tag "Type", type: "button", class: "btn btn dropdown-toggle m-1", data: { bs_toggle: "dropdown" }, aria: { expanded: "false" } 
+        <%= content_tag :ul, class: "dropdown-menu dropdown-menu-right" do 
+          <li><%= link_to "All Exercises", exercises_path, class: "dropdown-item" </li>
+          <li><%= link_to "CLF Exercises", exercises_path(type: "CFL"), class: "dropdown-item" </li>
+          <li><%= link_to "FA Exercises", exercises_path(type: "FA"), class: "dropdown-item" </li>
+          <li><%= link_to "grammar Exercises", exercises_path(type: "grammar"), class: "dropdown-item" </li>
+          <li><%= link_to "PDA Exercises", exercises_path(type: "PDA"), class: "dropdown-item" </li>
+          <li><%= link_to "Regular Exercises", exercises_path(type: "Regular"), class: "dropdown-item" </li>
+          <li><%= link_to "TM Exercises", exercises_path(type: "TM"), class: "dropdown-item"</li>
+        <% end 
+      <% end 
     </div>
-  </div>
+  </div> %>
+
   <div class="table-responsive">
     <table id="table" class="table table-striped">
       <thead class="thead">
@@ -42,7 +42,7 @@
         <% @exercises.each do |exercise| %>
           <tr>
             <td><%= exercise.id%></td>
-           <td><%= link_to truncate(exercise.title, length: 20, omission: '...'), exercise %></td>
+            <td><%= link_to exercise.title , exercise,class:"badge"%></td>
             <td><%= exercise.exercise_type%></td>
             <td><%= exercise.user.email%></td>
             <td><%= exercise.created_at%></td>
@@ -57,12 +57,13 @@
 <script>
   $(document).ready(function () {
     $('#table').DataTable({
-      // Disable the searching 
-      // of the DataTable
-      searching: false
+      // Enable searching and set placeholder text
+      searching: true,
+      language: {
+        searchPlaceholder: "Type"
+      }
     });
   });
 </script>
-
 </body>
 </html>
