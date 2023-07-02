@@ -1,0 +1,29 @@
+<%=render "show_navbar"%>
+<h2>Waiting List</h2>
+
+<% if @group.waitingList.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @group.waitingList.each do |waiting_list_entry| %>
+        <tr>
+          <td><%= waiting_list_entry.user.email %></td>
+          <td>
+            <%= form_with(url: group_members_path(@group), method: :post) do %>
+            <%= hidden_field_tag 'member[emails]', waiting_list_entry.user.email %>
+              <%= submit_tag "Add to Members", class: "button" %>
+            <% end %>
+      
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No users are currently waiting to join this group.</p>
+<% end %>

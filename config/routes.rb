@@ -39,11 +39,18 @@ Rails.application.routes.draw do
 
   get 'lib/odsaUtils-min.js' => proc { [200, {}, [File.read(Rails.root.join('public', 'lib', 'odsaUtils.js'))]] }
   get 'lib/odsaAV-min.js' => proc { [200, {}, [File.read(Rails.root.join('public', 'lib', 'odsaAV.js'))]] }
-
+ 
+  get 'users/:id/groups', to: 'groups#user_group', as: :user_groups
   resources :groups do
-    resources :members, only: %i[new create]
+    member do
+      post 'join'
+      post 'add_to_members'
+    delete 'remove_from_list'
+    end
+    resources :members, only: %i[new create] 
     resources :tasks, only: %i[new create]
   end
+
 
   get 'editor', to: 'editor#index'
   get 'editor/fa', to: 'editor#fa'
@@ -53,8 +60,9 @@ Rails.application.routes.draw do
   get 'editor/grammar', to: 'editor#grammar'
   get 'editor/fAFixer', to: 'editor#fAFixer'
 
-  get '/FA.html', to: redirect('/editor/fa')
+  get '/FA.html', to: redirect('/OpenDSA-master/AV/OpenFLAP/FA.html')
   get '/FAFixer.html', to: redirect('/editor/fAFixer')
   get '/user_submissions', to: 'submissions#user_submissions'
   get '/groups/:id/dashboard', to: 'groups#dashboard', as: 'group_dashboard'
+  get '/groups/:id/waitingList', to: 'groups#waitingList', as: 'group_waitingList'
 end

@@ -1,0 +1,7 @@
+<ul>
+  <li><%= link_to "Main", group_path %></li>
+  <li><%= link_to 'Dashboard', group_dashboard_path(@group) %></li>
+  <%if current_user.id==@group.user_id%>
+  <li><%= link_to "Waiting List", group_waitingList_path(@group) %></li>
+  <%end %>
+</ul>

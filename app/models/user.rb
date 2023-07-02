@@ -19,6 +19,10 @@ class User < ApplicationRecord
   def last_name=(value)
     write_attribute(:last_name, value)
   end
+  
+  def has_submission?(exercise)
+    self.submissions.exists?(exercise_id: exercise.id)
+  end
 
   has_many :groups, through: :members
   has_many  :members

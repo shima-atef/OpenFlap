@@ -4,4 +4,6 @@ class Group < ApplicationRecord
   belongs_to :user
   has_many :users, through: :members
   has_many :exercises, through: :tasks
+  has_many :waitingList
+  has_many :users, through: :waitingLists, source: :user
 end

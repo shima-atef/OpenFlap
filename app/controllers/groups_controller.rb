@@ -22,6 +22,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @members = @group.members
   end
+  
 
   def group_tasks
     @group = Group.find(params[:id])
@@ -40,12 +41,46 @@ class GroupsController < ApplicationController
     @exercises = @group.exercises
   end
 
+  def waitingList
+    @group = Group.find(params[:id])
+  end 
 
+  # POST /groups/1/join
+  def join
 
+     @group = Group.find(params[:id])
+     if @group.public
+       if @group.members.include?(current_user)
+         redirect_to @group, alert: "You are already a member of this group."
+       else
+         member = Member.new(user: current_user, group: @group)
+         if member.save
+         redirect_to @group, notice: "You have joined the group!"
+       else
+   
+       redirect_to group_path(@group)
+     end
+   end 
+  else 
+    waitingList = WaitingList.new(user: current_user, group: @group)
+   waitingList.save
+end
+
+  end 
+
+ 
+
+  def user_group
+    user_id = current_user.id
+
+    @groups = Group.joins(:members).where(members: { user_id: user_id })
+                  .or(Group.where(user_id: user_id))
+                  .distinct
+  end 
 
   private
 
   def group_params
-    params.require(:group).permit(:title, :description, :user_id, task: [:exercise_id])
+    params.require(:group).permit(:title, :description, :user_id, :public, task: [:exercise_id])
   end
 end

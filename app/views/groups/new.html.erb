@@ -7,6 +7,12 @@
   <%= form.label :description %>
   <%= form.text_area :description %>
 
+ <%= form.radio_button :public, true, checked: true %>
+  <%= form.label :public, 'Public' %>
+
+  <%= form.radio_button :public, false %>
+  <%= form.label :public, 'Private' %>
+
   <%= form.hidden_field :user_id, value: current_user.id %>
 
   <%= form.submit 'Create Group' %>

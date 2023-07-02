@@ -247,7 +247,7 @@
 		localStorage['fromEditor'] = true;
 		if (graphType == "fa")
 		{
-			window.open("../../FA.html");
+			window.open("/OpenDSA-master/AV/OpenFLAP/FA.html");
 		}
 		else if (graphType == "pad")
 		{

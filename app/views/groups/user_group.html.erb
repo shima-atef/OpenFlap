@@ -1,6 +1,6 @@
 
 <%=render "index_navbar"%>
-<h1 style="color: black;">All Groups</h1>
+<h1 style="color: black;">MY Groups</h1>
 
 
 <%= link_to "new group" , new_group_path%>
@@ -18,15 +18,14 @@
           <th>#<th>
           <th>Created By</th>
           <th >Created At</th>
-          <th>#<th>
+      
           
         </tr>
       </thead>
       <tbody>
         <% @groups.each do |group| %>
-          <% member = Member.where(user: current_user, group: group).first %>
-                         <% if !member %>
-          <tr>
+        
+            <tr>
             <td><%= group.id%></td>
             <td> <%= link_to group.title, group_path(group) %></td>
             <td><%= group.description%></td>
@@ -34,23 +33,12 @@
             <td>public</td>
             <%else%>
              <td>Private</td>
-             <%end%>
+             <%end %>
             <td><%= group.user.email%></td>
             <td><%= group.created_at%></td>
-            <td>
-
-                 <% if group.public? %>
-                             <%= button_to "Join Group", join_group_path(group), method: :post, class: "button" %>
-
-                 <%else %>
-                            <%= button_to "Request to Join", join_group_path(group), method: :post, class: "button" %>
-                
-      
-                  <% end %>
-            </td>
           </tr>
         <% end %>
-         <% end %>
+        
       </tbody>
     </table>
   </div>

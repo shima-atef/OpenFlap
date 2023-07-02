@@ -1,20 +1,36 @@
 <%= stylesheet_link_tag 'groups' %>
-
-
+<%=render "show_navbar"%>
 <h1 style="color: black;"><%= @group.title %></h1>
 <h2 style="color: black;"><%= @group.description %></h2>
-<p><%= link_to 'Dashboard', group_dashboard_path(@group), class: 'dashboard-link' %></p>
 
-
-
-
-
-<h2>Exercises</h2>
-<ul>
-  <% @group.tasks.each do |task| %>
- <li><%= link_to task.exercise.title, exercise_path(task.exercise) %></li>
-<% end %>
-</ul>
-
-
+<%if current_user.id==@group.user_id%>
 <%= link_to 'Add Exercises', new_group_task_path(group_id: @group.id), class: 'btn btn-primary' %>
+<%end%>
+<h2>Exercises</h2>  
+<table>
+  <thead>
+    <tr>
+      <th >ID</th>
+          <th >Name</th>
+          <th >Type</th>
+           <th>Has Submission</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @group.tasks.each do |task| %>
+      <tr>
+            <td><%= task.exercise.id%></td>
+              <td><%= link_to truncate( task.exercise.title, length: 20, omission: '...'),  exercise_path(task.exercise) %></td>
+          
+            <td><%=  task.exercise.exercise_type%></td>
+            <td>
+          <% if current_user.has_submission?(task.exercise) %>
+            Yes
+          <% else %>
+            No
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

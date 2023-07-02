@@ -264,7 +264,8 @@
 		localStorage['fromEditor'] = true;
 		if (graphType == "fa")
 		{
-			window.open("../../FA.html");
+			
+			window.open("/OpenDSA-master/AV/OpenFLAP/FA.html");
 		}
 		else if (graphType == "pad")
 		{
@@ -410,6 +411,16 @@
 
 		else if (document.getElementById('Regular').checked)
 		exercise_type="Regular";
+		else if (document.getElementById('NFAtoDFA').checked)
+		{exercise_type="NFAtoDFA";
+
+		$("#editGraph").show();
+		$("#uploadGraph").show();
+
+}
+
+
+		
 
 
 
@@ -504,6 +515,8 @@
 	$("#grammar").click(onTMReset);
 	$("#PDA").click(onTMReset);
 	$("#Regular").click(onTMReset);
+	$("#NFAtoDFA").click(onTMReset);
+	
 	
 
 
