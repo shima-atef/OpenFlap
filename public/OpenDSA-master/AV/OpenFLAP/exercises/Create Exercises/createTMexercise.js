@@ -174,7 +174,7 @@
 
 		var addCaseButton = $("<button type='button' id='addTestCase'>Add another test case</button>");
 		addCaseButton.click(addCase);
-		$("fieldset[id='" + problemCount + "']").append(addCaseButton);
+		$("fieldset[id='" + problemCount + "'] #button-container").append(addCaseButton);
 
 		var editGraphButton = $("<button type='button' id='editGraph'>Edit Graph</button>");
 		editGraphButton.click(editGraph);

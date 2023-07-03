@@ -1,12 +1,21 @@
-<%=render "show_navbar"%>
-<h2>Waiting List</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+       <%# <%= stylesheet_link_tag "tables" %> 
+<%= stylesheet_link_tag 'groups' %>
+
+  </head>
+  <body>
+
+
+<h1 class="heading mt-5 mb-5">Waiting List</h1>
 
 <% if @group.waitingList.any? %>
-  <table>
-    <thead>
+  <table class="table table-striped">
+    <thead class="table_head">
       <tr>
-        <th>User</th>
-        <th>Actions</th>
+        <th class="text-center">User</th>
+        <th class="text-center">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -14,16 +23,17 @@
         <tr>
           <td><%= waiting_list_entry.user.email %></td>
           <td>
-            <%= form_with(url: group_members_path(@group), method: :post) do %>
-            <%= hidden_field_tag 'member[emails]', waiting_list_entry.user.email %>
-              <%= submit_tag "Add to Members", class: "button" %>
+             <%= form_with(url: group_members_path(@group), method: :post, html: { class: "waiting-table" }) do %>
+              <%= hidden_field_tag 'member[emails]', waiting_list_entry.user.email %>
+              <%= submit_tag "Add to Members", class: "btn" %>
             <% end %>
-      
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% else %>
-  <p>No users are currently waiting to join this group.</p>
+  <p class="waiting-caption">No users are currently waiting to join this group.</p>
 <% end %>
+</body>
+</html>

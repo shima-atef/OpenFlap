@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
+    @group = Group.new
   end
 
   def new
@@ -14,13 +15,14 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to @group, notice: 'Group was successfully created.'
     else
-      render :new
+      render :index
     end
   end
 
   def show
     @group = Group.find(params[:id])
     @members = @group.members
+    @task = Task.new
   end
   
 
@@ -39,6 +41,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @members = @group.members
     @exercises = @group.exercises
+    @member = Member.new
   end
 
   def waitingList

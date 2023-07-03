@@ -1,4 +1,66 @@
-/* Style the link to the dashboard in the show page */
+
+
+
+
+.group-label{
+  color:#0b375e;
+  font-family: 'Ubuntu';
+  font-size:25px;
+  font-weight:700;
+}
+
+.Group-discription{
+  color: #0b375e;
+  font-family: 'Ubuntu';
+  font-size: 24px;
+  font-weight: 400;
+}
+.Group-button{
+  width: 200px;
+}
+
+.Group-EX{
+  padding-left: 0;
+}
+
+.Group-form{
+  margin-top: 0;
+  text-align: left;
+}
+
+
+
+
+.Group-name{
+  color: #0b375e;
+  text-align: left;
+}
+
+.Group-bg{
+  background-color: burlywood;
+}
+.waiting-caption{
+text-align: center;
+color: #0b375e;
+font-size:24px;
+font-family: 'Ubuntu';
+}
+
+.waiting-table{
+  margin: 0;
+  padding: 0;
+  background-color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
 a.dashboard-link {
     color: #fff;
     background-color: #007bff;

@@ -32,7 +32,7 @@ class MembersController < ApplicationController
     end
 
     
-    redirect_to group_path(@group)
+    redirect_to group_dashboard_path(@group)
   end
   
 end

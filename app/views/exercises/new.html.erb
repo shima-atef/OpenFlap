@@ -2,66 +2,21 @@
 <html>
 <head>
     <title>Exercise Editor</title>
-    <%# <link rel="stylesheet" href="\OpenDSA-master\AV\OpenFLAP\exercises\Create Exercises\createTMexercise.css" type="text/css" /> %>
-<style>
-.ex-bg{
-        background-image: radial-gradient(circle, #051c21, #294147, #506b71, #7a979e, #a6c6cd);
-
-}
-.testCase{
-  margin-left:20px;
-}
-#transducerTwo {
-    display: none;
-}
-
-#box1 {
-    float: left;
-    width: 45%;
-}
-
-#box2 {
-    float: right;
-    width: 45%;
-}
- @media (max-width: 575.98px) {
-    #box1, #box2 {
-      width: 100%;
-    }
-    #box1 input, #box2 input {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  }
-  .exercise-file-upload {
-  margin-top: 10px;
-  padding: 5px;
-  background-color: #eee;
-  /* add more styles here */
-}
-
-.exercise-file-upload a {
-  color: blue;
-  text-decoration: underline;
-  /* add more styles here */
-}
-</style>
+      <%= stylesheet_link_tag "exercise" %>
 </head>
 
-<body class="ex-bg">
+<body>
 <div id="error-message"></div> 
- 
- <div class="exercise-file-upload"><%= link_to "upload exercise json file ", file_upload_path %></div>
+ <h1 class="heading mt-5 ">Exercise Generator</h1>
+ <div class="exercise-file-upload mt-4 text-center">
+ <%= link_to "Upload Exercise JASON File", file_upload_path, class:"btn EX-upload" %>
+ </div>
     <div id="container">
+     
     <div class="row justify-content-center">
     <div class="col-lg-6 col-md-9 col-sm-12">
             <form name="exercises" action="" method="get">
 
-        <h1 class="text-center mb-5">Exercise Generator</h1>
-
-        
-   
        <div class="form-group mb-3">
   <label for="mode2">Select a mode:</label>
   <br>
@@ -118,7 +73,7 @@
   </div>
 </div>
 
-<div class="form-group" style="margin-top: 10px;">
+<div class="form-group mt-3">
   <div class="form-check">
     <input class="form-check-input" type="radio" name="show1" id="showDescription" value="false">
     <label class="form-check-label d-block" for="showDescription">Description:</label>
@@ -161,14 +116,13 @@
                             </div>
                         </div>
                       </div>
-                        <button type="button" id="addTestCase" class="btn m-2">Add another test case</button>
-                        <button type="button" id="editGraph"  class="btn m-2">Edit Graph</button>
-                        <button type="button" id="uploadGraph"  class="btn m-2">Upload Graph</button>
+                        <button type="button" id="addTestCase" class="btn EX-button">Add another test case</button>
+                        <button type="button" id="editGraph"  class="btn EX-button">Edit Graph</button>
+                        <button type="button" id="uploadGraph"  class="btn EX-button">Upload Graph</button>
                         <input type="file" id="upload" style="display: none">
-                        <button id="getjson"  class="btn m-2">Create</button>
+                        <button id="getjson"  class="btn EX-button">Create</button>
                         <!--  <button id="fixerButton"  class="btn m-2">FAFixer</button>
                           <button id="testerButton"  class="btn m-2">FATester</button>-->
-
                 </fieldset>
             
       

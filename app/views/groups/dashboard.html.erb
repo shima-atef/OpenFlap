@@ -1,17 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
 <%= stylesheet_link_tag 'groups' %>
-<%=render "show_navbar"%>
+  </head>
+  <body>
 
-<h1 style="color: black;">Dashboard</h1>
+<h1 class="heading mt-5 mb-5">Dashboard</h1>
+<div class="container-fluid mt-5 text-center">
  <%if current_user.id==@group.user_id%>
-<%= link_to 'Add Members', new_group_member_path(group_id: @group.id), class: 'btn btn-primary' %>
+<%# <%= link_to 'Add Members', new_group_member_path(group_id: @group.id), class: 'btn btn-primary' %>
+  <%= button_tag "Add Member", type: "button", class: "btn Group-button", data: { bs_toggle: "modal", bs_target: "#exampleModal" } %>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 profile" id="exampleModalLabel">Add Member</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= form_with(model: @member, url: group_members_path(@group), local: true,class:"Group-form") do |form| %>
+  <div class="form-group">
+    <%= form.label :emails %>
+    <%= form.text_area :emails, class: 'form-control', rows: 5, placeholder: 'Emails separated by new line' %>
+  </div>
+
+           
+        </div>
+        <div class="modal-footer justify-content-center">
+ <%= form.submit 'Add Members', class: 'btn Group-button' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 <%end %>
 
-<table>
-  <thead>
+<div class="table-responsive mt-3">
+    <table  id="table" class="table table-striped">
+     <thead class="table_head">
     <tr>
-      <th>Member</th>
+      <th  class="text-center">Member</th>
       <% @exercises.each do |exercise| %>
-        <th> <%=exercise.id%></th>
+        <th  class="text-center"> <%=exercise.id%></th>
       <% end %>
     </tr>
   </thead>
@@ -33,4 +65,6 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
+</body>
+</html>

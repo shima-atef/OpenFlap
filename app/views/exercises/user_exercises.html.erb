@@ -29,7 +29,7 @@
             <td><%= exercise.exercise_type %></td>
             <td><%= exercise.created_at %></td>
             <td><%= link_to Submission.where(exercise_id: exercise.id).count, exercise_submissions_path(exercise),class:"badge" %></td>
-            <td><%= link_to"Delete", exercise_path(exercise), method: :delete, data: { confirm: "Are you sure you want to delete this exercise?" },class:"btn" %></td> 
+            <td><%= link_to "Delete", exercise_path(exercise), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this exercise?" }, class: "btn"%></td> 
           </tr>
         <% end %>
       </tbody>
@@ -44,6 +44,7 @@
       searching: false
     });
   });
+  
 </script>
 
 </body>

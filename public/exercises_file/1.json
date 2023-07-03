@@ -1,1 +1,1 @@
-[{"expression":"","description":"Even frequency","type":"DFA","testCases":[{"":true},{"abb":false},{"aab":false},{"aa":true},{"aabb":true},{"abababba":true},{"aaaabbbb":true}],"graph":{"nodes":[],"edges":[]}}]
+[{"expression":"","description":"make  even count","type":"TM","testCases":[{"aa":true,"ShowTestCase":true}],"graph":{"nodes":[],"edges":[]}}]

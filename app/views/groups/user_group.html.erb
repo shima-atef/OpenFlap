@@ -1,33 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <%= stylesheet_link_tag "tables" %>
 
-<%=render "index_navbar"%>
-<h1 style="color: black;">MY Groups</h1>
+  </head>
+  <body>
+   <h1 class="text-center heading mt-5 mb-5">My Groups</h1>
 
 
-<%= link_to "new group" , new_group_path%>
-
-
-
-
-
- <table>
-      <thead >
-        <tr>
-          <th >ID</th>
-          <th >title</th>
-          <th >Description</th>
-          <th>#<th>
-          <th>Created By</th>
-          <th >Created At</th>
-      
-          
+ <div class="table-responsive mt-3">
+    <table  id="table" class="table table-striped">
+     <thead class="table_head">
+    <tr>
+          <th class="text-center">ID</th>
+          <th class="text-center">Title</th>
+          <th class="text-center">Description</th>
+          <th class="text-center">Type</th>
+          <th class="text-center">Created By</th>
+          <th class="text-center">Created At</th>
         </tr>
       </thead>
       <tbody>
         <% @groups.each do |group| %>
-        
             <tr>
             <td><%= group.id%></td>
-            <td> <%= link_to group.title, group_path(group) %></td>
+            <td> <%= link_to group.title, group_path(group),class:"badge" %></td>
             <td><%= group.description%></td>
             <%if group.public%>
             <td>public</td>
@@ -43,3 +40,6 @@
     </table>
   </div>
 </div>
+
+</body>
+</html>

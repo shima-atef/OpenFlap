@@ -1,21 +1,41 @@
-/* .dropdown .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
-background-color: #0b375e;
-color: #fff;
-} */
-table.dataTable.table-striped > tbody > tr.odd > *{
-  color:#0b375e;
- }
+table.dataTable.table-striped>tbody>tr.odd>* {
+  background-color: #fff;
+  box-shadow:none ;
+}
+table.dataTable.table-striped>tbody>tr.even>* {
+  background: rgba(222, 213, 204, 0.2);
+}
+ .table-striped>tbody>tr:nth-of-type(odd)>* {
+ color: #0b375e;
+ --bs-table-accent-bg:#fff;
+} 
+.table-striped>tbody>tr:nth-of-type(even)>*{
+  --bs-table-accent-bg:rgba(222, 213, 204, 0.2);
+}
+.table>:not(caption)>*>*{
+  padding: 0;
+}
+
+
  .heading{
   color:#0b375e;
  }
  .table-striped tbody tr {
-  height: 80px;
+  height: 90px;
   }
- .table-striped tbody tr:nth-of-type(odd) {
-    background: rgba(222, 213, 204, 0.2);
-   
+
+.table>thead{
+        vertical-align: middle;
+ }
+  .table_head {
+    background-color:rgba(222, 213, 204, 0.2);
+    /* font-family: 'Rubik'; */
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    height: 80px;
+     vertical-align:middle;
   }
- 
   td {
     text-align: center;
     vertical-align: middle;
@@ -29,26 +49,24 @@ table.dataTable.table-striped > tbody > tr.odd > *{
   th{
      
   color:#0b375e;
-  font-size: 18px;
+  font-size: 20px;
  }
  .badge{
-    color:#0b375e;
+    /* color:#0b375e; */
     text-decoration:none;
+    color: var(--bs-link-color);
     font-family: 'Ubuntu';
     font-size:18px;
     font-weight:lighter;
  }
-.badge:hover{
-color: #0b375e;
-}
+ .ex_links{
+  list-style-type: none;
+ }
 
 
 
 
-
-
-
-
+ 
  /* Pagination links*/
 .dataTables_wrapper .dataTables_paginate .pagination .page-item .page-link {
   /* padding: 0.5rem 0.75rem;
@@ -60,7 +78,9 @@ color: #0b375e;
   /* border: 1px solid #007bff; */
   background-color: #fff;
 }
-
+.dataTables_wrapper.dt-bootstrap5.no-footer{
+  margin-top: 30px;
+}
 .dataTables_wrapper .dataTables_paginate .pagination .page-item .page-link:hover {
   background-color:#0b375e ;
   color: #fff;
@@ -78,6 +98,7 @@ color: #0b375e;
 }
 div.dataTables_wrapper div.dataTables_length label , div.dataTables_wrapper div.dataTables_filter label{
   color: #0b375e;
+  margin-bottom: 20px;
 }
 div.dataTables_wrapper div.dataTables_length select ,div.dataTables_wrapper div.dataTables_filter input{
   box-shadow: none;
