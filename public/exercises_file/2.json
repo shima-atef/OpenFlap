@@ -1,1 +1,1 @@
-[{"expression":"","description":"welcome abcde","type":"DFA","testCases":[{"abcde":true,"ShowTestCase":true}],"graph":{"nodes":[],"edges":[]}}]
+[{"expression":"","description":"Give FA that accepts an even number of  a's","type":"DFA","testCases":[{"":true,"ShowTestCase":true},{"aa":true,"ShowTestCase":true},{"aaaa":true,"ShowTestCase":false},{"a":false,"ShowTestCase":true},{"aaaaaaa":false,"ShowTestCase":false},{"aaa":false,"ShowTestCase":false},{"aaaaaaaa":true,"ShowTestCase":false}],"graph":{"nodes":[],"edges":[]}}]

@@ -1,1 +1,1 @@
-[{"expression":"","description":"make  even count","type":"TM","testCases":[{"aa":true,"ShowTestCase":true}],"graph":{"nodes":[],"edges":[]}}]
+[{"expression":"","description":"Give FA that accepts at most 2 a's","type":"DFA","testCases":[{"":true,"ShowTestCase":true},{"a":true,"ShowTestCase":true},{"aa":true,"ShowTestCase":false},{"aaaa":false,"ShowTestCase":true},{"aaaaaaaaaa":false,"ShowTestCase":false}],"graph":{"nodes":[],"edges":[]}}]

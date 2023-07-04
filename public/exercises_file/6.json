@@ -1,45 +1,53 @@
 [{
     "_exerciseType": "Comment: DFA, NFA, REGEXP, GRAMMAR,PDA,TM.",
-    "exerciseType": "DFA",
-    "totalTrueCases": 6,
+    "exerciseType": "PDA",
+    "totalTrueCases": 8,
     "totalFalseCases": 3,
     "containLetters": ["a", "b"],
     "randomStringLength": [0, 15],
-    "description": "Construct the DFA for the following language. $L\\: =\\: \\{w \\in \\Sigma^* \\mid n_b(w) \b\\:mod\\: 3\\: =\\: 0 \\:and\\: does\\: not\\: have\\: the\\: substring\\: aab\\}$ , Σ ={a, b}. For example, bbba, bababa, babbbbbaaandaaaa are in L.  But baababa is not.",
+    "description": "Construct the PDA that accepts strings in $\\{w \\mid w \\in \\{a, b\\}^*\\}$ that have twice as many a's as b's.",
     "testCases": [{
-            "bbba": true,
+            "": true,
             "ShowTestCase":true
         },
         {
-            "bababa": true,
+            "aab": true,
             "ShowTestCase":true
         },
         {
-            "babbbbbaa": true,
+            "aba": true,
             "ShowTestCase":true
         },
         {
-            "aaaa": true,
+            "baa": true,
             "ShowTestCase":true
         },
         {
-            "abbbabbaba": true,
+            "aaabab": true,
             "ShowTestCase":true
         },
         {
-            "ababababababa": true,
+            "baabbbaaaa": false,
             "ShowTestCase":true
         },
         {
-            "ababababa": false,
+            "bbbbaaaaaaaa": true,
             "ShowTestCase":true
         },
         {
-            "aababbbbba": false,
+            "bbbaaaaaabaa": true,
             "ShowTestCase":true
         },
         {
-            "baababa": false,
+            "aaaaaa": false,
+            "ShowTestCase":true
+        },
+        {
+            "bbbbbbbbbb": false,
+            "ShowTestCase":true
+        },
+        {
+            "baabbaaaa": true,
             "ShowTestCase":true
         }
     ],
