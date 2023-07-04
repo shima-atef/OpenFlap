@@ -1,17 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
       <%= stylesheet_link_tag "tables" %>
-
   </head>
   <body>
-<div class="container-fluid mt-5">
-  <h1 class="text-center heading mt-5 mb-5">Submissions</h1>
 
+
+<h1 class="heading text-center mt-5">Submissions</h1>
+
+<div class="container-fluid mt-5 mb-4">
 <div class="table-responsive">
   <table id="table" class="table table-striped">
-    <thead>
+    <thead class="table_head">
       <tr>
         <th class="text-center">ID</th>
         <th class="text-center">Link</th>
@@ -24,7 +24,7 @@
       <% @submission_links.each do |submission_link| %>
         <tr>
           <td><%= submission_link[:id] %></td>
-          <td><%= link_to 'Show Solution', submission_link[:url],class:"badge"%></td>
+          <td><%= link_to 'Show Solution', submission_link[:url],class:"links"%></td>
           <td><%= submission_link[:user_email]%></td>
           <td><%= submission_link[:grade] %></td>
           <td><%= submission_link[:created_at] %></td>
@@ -34,6 +34,8 @@
   </table>
 </div>
 </div>
+
+
 <script>
   $(document).ready(function () {
     $('#table').DataTable({

@@ -4,21 +4,22 @@
     <%= stylesheet_link_tag "profile" %>
   </head>
   <body>
- <h1 class=" profile text-center mt-4 mb-5">Profile</h1>
+ <h1 class="heading text-center mt-5">Profile</h1>
 
 
 <div class="container-fluid mt-5">
+
   <div class="row">
   <%# strat right side %>
     <div class="col-md-3 mb-4 mt-3">
       <ul class="profile_list d-flex flex-column">
-        <li class="my-4"><i class="fa-solid fa-pen"></i><%= link_to 'Edit Profile', edit_user_registration_path,class: 'my-link' %></li>
-        <li class="my-4"><i class="fa-solid fa-user-group"></i><%= link_to 'My Groups', user_groups_path(current_user),class: 'my-link'%></li>
+        <li class="my-4"><i class="fa-solid fa-pen"></i><%= link_to 'Edit Profile', edit_user_registration_path,class: 'profile-link' %></li>
+        <li class="my-4"><i class="fa-solid fa-user-group"></i><%= link_to 'My Groups', user_groups_path(current_user),class: 'profile-link'%></li>
 
-        <li class="my-4"><i class="fa-sharp fa-solid fa-eye"></i><%= link_to 'My exercises', user_exercises_path(@user),class: 'my-link'%></li>
-        <li class="my-4"><i class="fa-solid fa-paper-plane"></i><%= link_to 'My Submissions', user_submissions_path(@user),class: 'my-link' %></li>
-        <li class="my-4"><i class="fa-solid fa-plus"></i><%= link_to "Create New Exercise", new_exercise_path,class: 'my-link'%></li>
-        <li class="my-4"><i class="fa-solid fa-sign-out"></i><%= link_to 'Sign out', destroy_user_session_path,class: 'my-link', method: :delete %></li>
+        <li class="my-4"><i class="fa-sharp fa-solid fa-eye"></i><%= link_to 'My exercises', user_exercises_path(@user),class: 'profile-link'%></li>
+        <li class="my-4"><i class="fa-solid fa-paper-plane"></i><%= link_to 'My Submissions', user_submissions_path(@user),class: 'profile-link' %></li>
+        <li class="my-4"><i class="fa-solid fa-plus"></i><%= link_to "Create New Exercise", new_exercise_path,class: 'profile-link'%></li>
+        <li class="my-4"><i class="fa-solid fa-sign-out"></i><%= link_to 'Sign out', destroy_user_session_path,class: 'profile-link', method: :delete %></li>
       </ul>
     </div>
   <%# end right side %>

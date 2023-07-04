@@ -6,16 +6,17 @@
   <body>
 
 <h1 class="heading mt-5 mb-5">Dashboard</h1>
+
 <div class="container-fluid mt-5 text-center">
+<%# POPUP form %>
  <%if current_user.id==@group.user_id%>
-<%# <%= link_to 'Add Members', new_group_member_path(group_id: @group.id), class: 'btn btn-primary' %>
   <%= button_tag "Add Member", type: "button", class: "btn Group-button", data: { bs_toggle: "modal", bs_target: "#exampleModal" } %>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 profile" id="exampleModalLabel">Add Member</h1>
+          <h1 class="modal-title fs-5 heading" id="exampleModalLabel">Add Member</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -28,15 +29,14 @@
            
         </div>
         <div class="modal-footer justify-content-center">
- <%= form.submit 'Add Members', class: 'btn Group-button' %>
+       <%= form.submit 'Add Members', class: 'btn Group-button' %>
         </div>
         <% end %>
       </div>
     </div>
   </div>
-
 <%end %>
-
+<%# table %>
 <div class="table-responsive mt-3">
     <table  id="table" class="table table-striped">
      <thead class="table_head">
@@ -55,7 +55,7 @@
           <td>
             <% submission = Submission.where(user_id: member.user.id, exercise_id: exercise.id).order(grade: :desc).first %>
             <% if submission %>
-              <%= link_to submission.grade, submission %>
+              <%= link_to submission.grade, submission,class:'links' %>
             <% else %>
               Not Attempted
             <% end %>

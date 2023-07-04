@@ -1,32 +1,25 @@
-.profile{
-    text-align: center;
-    font-family: 'Ubuntu';
-     font-size: 40px;
-     color:#0b375e;
-}
 .profile_list{
     list-style: none;
     font-family: 'Ubuntu';
     border-right: 2px solid #DED5CC;
 }
 
-.profile_list .my-link{
+.profile_list .profile-link{
     font-weight: 500;
     font-size: large;
     text-decoration: none;
     color:#858585;
 }
+
 .profile_list i{
     color:#858585;
     padding-right: 14px;
 }
-.profile_list .my-link:hover,
+
+ .profile_list .profile-link:hover,
 .profile_list li:hover i {
     color:#093761;
-
-  }
-
-
+ } 
 
 .info h5{
     font-size: 18px;
@@ -36,6 +29,7 @@
     line-height: 28px;
     color:#093761;
 }
+
 .horizontal_line
 {
     width:100%;
@@ -57,18 +51,6 @@
     font-style: normal;
     color: #093761;
 }
-.input-group-addon{color:#ff0000; background-color: #ffffff;}
-
-
-  
-
-
-
-
-
-
-
-
 
 @media (max-width: 768px) {
     .profile_list {

@@ -27,18 +27,11 @@
   margin-top: 0;
   text-align: left;
 }
-
-
-
-
 .Group-name{
   color: #0b375e;
   text-align: left;
 }
 
-.Group-bg{
-  background-color: burlywood;
-}
 .waiting-caption{
 text-align: center;
 color: #0b375e;
@@ -47,40 +40,7 @@ font-family: 'Ubuntu';
 }
 
 .waiting-table{
-  margin: 0;
+  margin:10px 0;
   padding: 0;
-  background-color:#fff;
+ background-color: #fff;
 }
-
-
-
-
-
-
-
-
-
-
-a.dashboard-link {
-    color: #fff;
-    background-color: #007bff;
-    padding: 8px 12px;
-    border-radius: 4px;
-    text-decoration: none;
-  }
-  
-  a.dashboard-link:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Style the group link in the dashboard page */
-  a.group-link {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  a.group-link:hover {
-    text-decoration: underline;
-  }
-  

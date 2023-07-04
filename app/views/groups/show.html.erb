@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<%= stylesheet_link_tag 'groups' %>
+        <%= stylesheet_link_tag 'groups' %>
   </head>
   <body>
+
+
   <div class="container-fluid mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8 col-lg-10">
     <div class="row mt-5 mb-5 text-center">
   <div class="col-4">
     <%= link_to 'View Dashboard', group_dashboard_path(@group),class:"btn Group-button" %>
-    </div>
+  </div>
+
     <%if current_user.id==@group.user_id%>
- 
     <div class="col-4">
      <%= link_to "Waiting List", group_waitingList_path(@group),class:" btn Group-button" %>
     </div>
+    <%end %>
 
-      <%end %>
-
-
+<%# POPUP block %>
 <% if current_user.id == @group.user_id %>
 <div class="col-4">
   <%= button_tag "Add Exercises", type: "button", class: "btn Group-button", data: { bs_toggle: "modal", bs_target: "#exampleModal" } %>
-      </div>
+</div>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 profile" id="exampleModalLabel">Add Exercises</h1>
+          <h1 class="modal-title fs-5 heading" id="exampleModalLabel">Add Exercises</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <%= form_with(model: @task, url: group_tasks_path(@group), local: true,class:"Group-form") do |form| %>
             <div class="form-group">
               <%= form.label :exercise_ids %>
-              <%= form.text_area :exercise_ids, class: 'form-control', rows: 5, placeholder: "Exercise IDs separated by new line" %>
+              <%= form.text_area :exercise_ids, class: 'form-control', rows: 4, placeholder: "Exercise IDs separated by new line" %>
             </div>
 
            
@@ -55,8 +56,8 @@
 </div>
 
 
-
-<div class="row  mt-5 mb-5 ">
+<%# Group Name and Description block %>
+<div class="row mt-5 mb-5 ">
   <div class="col-4">
     <label class="group-label">Group Name</label>
   </div>
@@ -64,8 +65,7 @@
     <h3 class="Group-name"><%= @group.title %></h3>
   </div>
 </div>
-
-<div class="row   mt-5">
+<div class="row mt-5">
   <div class="col-4">
     <label class="group-label mb-3">Description</label>
   </div>
@@ -76,12 +76,8 @@
 
 
 
-
+<%# Exercises block %>
 <h2 class="Group-name mt-5 mb-5">Exercises</h2>  
-
-
-
- 
 <table class="table table-striped">
   <thead class="table_head"> 
     <tr>
@@ -95,7 +91,7 @@
     <% @group.tasks.each do |task| %>
       <tr>
         <td><%= task.exercise.id %></td>
-        <td><%= link_to truncate(task.exercise.title, length: 20, omission: '...'), exercise_path(task.exercise),class:"badge" %></td>
+        <td><%= link_to truncate(task.exercise.title, length: 20, omission: '...'), exercise_path(task.exercise),class:"links" %></td>
         <td><%= task.exercise.exercise_type %></td>
         <td>
           <% if current_user.has_submission?(task.exercise) %>

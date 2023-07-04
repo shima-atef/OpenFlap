@@ -5,17 +5,19 @@
     <title>profile</title> 
   </head>
   <body>
+
+  <h1 class=" heading text-center mt-5">Edit Profile</h1>
+
   <div class="container-fluid mt-5">
   <div class="row">
-     <h1 class=" profile text-center mt-2 mb-5">Edit Profile</h1>
     <div class="col-md-3 mb-4 mt-5">
     <%# left side %>
       <ul class="profile_list d-flex flex-column">
-        <li class="my-4"><i class="fa-solid fa-user"></i><%= link_to 'View Profile', users_profiles_show_path,class: 'my-link'%></li>
-        <li class="my-4"><i class="fa-sharp fa-solid fa-eye"></i><%= link_to 'My exercises', user_exercises_path(@user),class: 'my-link'%></li>
-        <li class="my-4"><i class="fa-solid fa-paper-plane"></i><%= link_to 'My Submissions', user_submissions_path(@user),class: 'my-link' %></li>
-        <li class="my-4"><i class="fa-solid fa-plus"></i><%= link_to "Create New Exercise", new_exercise_path,class: 'my-link'%></li>
-        <li class="my-4"><i class="fa-solid fa-sign-out"></i><%= link_to 'Sign out', destroy_user_session_path,class: 'my-link', method: :delete %></li>
+        <li class="my-4"><i class="fa-solid fa-user"></i><%= link_to 'View Profile', users_profiles_show_path,class: 'profile-link'%></li>
+        <li class="my-4"><i class="fa-sharp fa-solid fa-eye"></i><%= link_to 'My exercises', user_exercises_path(@user),class: 'profile-link'%></li>
+        <li class="my-4"><i class="fa-solid fa-paper-plane"></i><%= link_to 'My Submissions', user_submissions_path(@user),class: 'profile-link' %></li>
+        <li class="my-4"><i class="fa-solid fa-plus"></i><%= link_to "Create New Exercise", new_exercise_path,class: 'profile-link'%></li>
+        <li class="my-4"><i class="fa-solid fa-sign-out"></i><%= link_to 'Sign out', destroy_user_session_path,class: 'profile-link', method: :delete %></li>
       </ul>
     </div>
     <%# end left side %>
@@ -23,9 +25,9 @@
   <div class="info">
     <h5 class="mt-5">BASIC INFO</h5>
   </div>
-  <div class="horizontal_line mt-5"></div>
+  <div class="horizontal_line mt-3"></div>
     
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form-horizontal my-form my-4" }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form-horizontal my-form" }) do |f| %>
  <div class="form_instruction">
     <%= render "devise/shared/error_messages", resource: resource %>
 </div>
@@ -45,7 +47,7 @@
     </div>
     
     <div class="col">
-      <div class="form-group my-3">
+      <div class="form-group my-2">
         <%= f.label :email ,"EMAIL",class: "input-label"%>
         <%= f.text_field :email, class: "form-control" %>
      </div>

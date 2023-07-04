@@ -2,19 +2,20 @@
 <html lang="en">
   <head>
       <%= stylesheet_link_tag "tables" %>
-
   </head>
   <body>
-    <h1 class="text-center heading mt-5 ">All Groups</h1>
+  
+<h1 class="text-center heading mt-5 ">All Groups</h1>
 
 
-<div class="container-fluid mt-5 text-center">
+<div class="container-fluid text-center mt-5  mb-3">
+<%# POPUP form %>
 <%= button_tag "Add New Group", type: "button", class: "btn Group-button", data: { bs_toggle: "modal", bs_target: "#exampleModal" } %>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5 profile" id="exampleModalLabel">New Group</h1>
+        <h1 class="modal-title fs-5 heading" id="exampleModalLabel">New Group</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -45,36 +46,24 @@
 
           <%= form.hidden_field :user_id, value: current_user.id %>
       </div>
-      <div class="modal-footer">
-          <div class="m-auto">
+            <div class="modal-footer justify-content-center">
             <%= form.submit 'Create Group', class: "btn Group-button" %>
           </div>
         <% end %>
         
-      </div>
     </div>
   </div>
 </div>
 
+<%# End of POPUP form %>
 
 
 
 
 
+<%# table %>
 
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="table-responsive mt-3">
+  <div class="table-responsive mt-4">
     <table  id="table" class="table table-striped">
      <thead class="table_head">
     <tr>
@@ -93,7 +82,7 @@
                   <% if !member %>
           <tr>
             <td><%= group.id%></td>
-            <td> <%= link_to group.title, group_path(group),class:"badge" %></td>
+            <td> <%= link_to group.title, group_path(group),class:"links" %></td>
             <td><%= group.description%></td>
             <%if group.public%>
             <td>public</td>
@@ -109,8 +98,6 @@
 
                  <%else %>
                             <%= link_to "Request to Join", join_group_path(group), data: { turbo_method: :post}, class: "btn" %>
-                
-      
                   <% end %>
             </td>
           </tr>
@@ -119,18 +106,6 @@
       </tbody>
     </table>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
 </body>

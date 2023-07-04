@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
        <%= stylesheet_link_tag "tables" %>
-
   </head>
   <body>
 
-  <h1 class="text-center heading mt-5 mb-5">All Exercises</h1>
-
-<div class="container-fluid mt-5">
+ 
+  <h1 class="text-center heading mt-5">All Exercises</h1>
+  
+<div class="container-fluid mt-5 mb-5">
   <div class="table-responsive mt-5">
     <table id="table" class="table table-striped">
       <thead class="table_head">
@@ -25,11 +25,11 @@
         <% @exercises.each do |exercise| %>
           <tr>
             <td><%= exercise.id%></td>
-            <td><%= link_to exercise.title , exercise,class:"badge"%></td>
+            <td><%= link_to exercise.title , exercise,class:"links"%></td>
             <td><%= exercise.exercise_type%></td>
             <td><%= exercise.user.email%></td>
             <td><%= exercise.created_at%></td>
-            <td><%= link_to Submission.where(exercise_id: exercise.id).count, exercise_submissions_path(exercise), class: "badge" %></td>
+            <td><%= link_to Submission.where(exercise_id: exercise.id).count, exercise_submissions_path(exercise), class: "links" %></td>
           </tr>
         <% end %>
       </tbody>

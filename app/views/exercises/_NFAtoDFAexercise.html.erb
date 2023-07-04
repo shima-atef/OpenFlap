@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="\OpenDSA-master\AV\OpenFLAP/css/tester.css" type="text/css" />
     <link rel="stylesheet" href="\OpenDSA-master\AV\OpenFLAP/css/help.css" type="text/css">
     <link rel="stylesheet" href="\OpenDSA-master\AV\OpenFLAP/css/NFAtoDFA.css" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <%# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="\OpenDSA-master/lib/jquery.ui.min.css" />
 
@@ -22,13 +22,30 @@
        
      });
     </script>
+ <style>
+    #editors-edit{
+       overflow:auto;
+   }
+    #container{
+      margin:30px auto;
+    }
+    #Exercise{
+      color:black;
+    }
+    #description{
+      color:black;
+      text-align:center;
+      margin-top:12px;
+     }
+    </style>
+
   </head>
 
-  <body>
+  <body id="editors-edit">
        <div id="container">
       <img id="check_mark" src="\OpenDSA-master\AV\OpenFLAP\help.png" alt="Proficient" style="display: none;float: left; width: 40px;">
       <h1 id="Exercise">NFA to DFA exercise</h1>
-      <button id="helpbutton"><img src="\OpenDSA-master\AV\OpenFLAP\help.png" /></button>
+      <%# <button id="helpbutton"><img src="\OpenDSA-master\AV\OpenFLAP\help.png" /></button> %>
       <h2 id="description"></h2>
       <div id="dialogueoverlay"></div>
       <div id="dialoguebox">

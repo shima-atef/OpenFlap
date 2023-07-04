@@ -76,7 +76,7 @@ td {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	display: block;
-	margin: 0l
+	margin: 0l;
 	list-style-type: none;
 	list-style: none;
 }
@@ -98,11 +98,11 @@ td {
 	background-color: #cdc9c9;
 }
 
-#container {
+/* #container {
 	width: 810px;
 	height: 810px;
 	overflow-y: auto;
-}
+} */
 .jsavcanvas {
   overflow-x: auto;
 }
@@ -140,3 +140,6 @@ td {
 	box-sizing: border-box;
 	padding: 5px 10px;
 }
+
+
+
