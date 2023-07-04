@@ -347,6 +347,7 @@
   top: 0; 
   left: 0;
   box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  margin-top: 48px;
 }
 .jsavsettings-dialog {
   border-radius: 10px;
