@@ -81,7 +81,7 @@ table.dataTable.table-striped>tbody>tr.even>* {
   background-color: #fff;
 }
 .dataTables_wrapper.dt-bootstrap5.no-footer{
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .dataTables_wrapper .dataTables_paginate .pagination .page-item .page-link:hover {
   background-color:#0b375e ;

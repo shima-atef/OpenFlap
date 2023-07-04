@@ -45,12 +45,15 @@
 </div>
 
           <%= form.hidden_field :user_id, value: current_user.id %>
-      </div>
-            <div class="modal-footer justify-content-center">
-            <%= form.submit 'Create Group', class: "btn Group-button" %>
-          </div>
+                     <div class="form-group d-flex justify-content-center align-items-center mt-3">
+
+           <%= form.submit 'Create Group', class: "btn Group-button" %>
+        </div>
         <% end %>
         
+      </div>
+           
+           
     </div>
   </div>
 </div>

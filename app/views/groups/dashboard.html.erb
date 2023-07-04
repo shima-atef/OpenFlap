@@ -25,13 +25,15 @@
     <%= form.label :emails %>
     <%= form.text_area :emails, class: 'form-control', rows: 5, placeholder: 'Emails separated by new line' %>
   </div>
+             <div class="form-group d-flex justify-content-center align-items-center mt-3">
 
+ <%= form.submit 'Add Members', class: 'btn Group-button' %>
+      </div>
+        <% end %>
            
         </div>
-        <div class="modal-footer justify-content-center">
-       <%= form.submit 'Add Members', class: 'btn Group-button' %>
-        </div>
-        <% end %>
+      
+      
       </div>
     </div>
   </div>
