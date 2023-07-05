@@ -32,10 +32,23 @@ class SubmissionsController < ApplicationController
     data = JSON.parse(request.body.read)
     progress = jff_to_json(data['progress'])
     grade = data['grade']
+    solution= JSON.parse(progress)
+    nodes = solution['nodes']
+    nodes.each do |node|
+      node['left'] = 0
+      node['top'] = 0
+    end
+    edges = solution['edges']
+
+    sorted_edges = edges.sort_by { |edge| edge['end'] }
+    solution['edges']=edges 
+    solution['nodes']=nodes
+   
     @submission = Submission.new(user_id: current_user.id, exercise_id: data['exerciseId'], grade: grade,
-                                 solution: progress)
+                        solution: solution)
+                      #  render json: { message: solution }
     @exercise = Exercise.find(params[:exercise_id])
-    if @submission.save
+   if  @submission.save
       file_name = "#{data['exerciseId']}.json"
       file_path = Rails.root.join('public', 'exercises_file', file_name)
       file_content = File.read(file_path)

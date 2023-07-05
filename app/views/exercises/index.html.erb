@@ -41,7 +41,7 @@
         <% @exercises.each do |exercise| %>
           <tr>
             <td><%= exercise.id%></td>
-            <td><%= link_to exercise.title , exercise,class:"links"%></td>
+          <td><%= link_to exercise.title.slice(0, 20) + (exercise.title.length > 20 ? '...' : ''), exercise, class: 'links' %></td>
             <td><%= exercise.exercise_type%></td>
             <td><%= exercise.user.email%></td>
             <td><%= exercise.created_at%></td>

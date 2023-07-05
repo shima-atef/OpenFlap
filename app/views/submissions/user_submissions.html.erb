@@ -24,7 +24,8 @@
       <% @submissions.each do |submission| %>
         <tr>
           <td><%= submission.id %></td>
-          <td><%= link_to submission.exercise.title, exercise_path(submission.exercise),class:"links" %></td>
+
+          <td><%= link_to submission.exercise.title.slice(0, 20) + (submission.exercise.title.length > 20 ? '...' : ''), exercise_path(submission.exercise),class:"links" %></td>
           <td><%= link_to "Show Solution", submission_path(submission),class:"links" %></td>
           <td><%= submission.grade %></td>
           <td><%= submission.created_at %></td>
